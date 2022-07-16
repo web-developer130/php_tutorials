@@ -166,7 +166,7 @@ else{
         
         
         
-** example 5 **
+  # example 5
 
 <?php
     require __DIR__ . './Header.php';
@@ -193,7 +193,7 @@ else{
 
 
 
-** example 6 **
+# example 6 
 
 <!DOCTYPE html>
 <html lang="en">
@@ -206,15 +206,9 @@ else{
 <body>
   <main>
     <h1>HEADER File</h1>
-    
-    
-
-
-
-
-
-
-** example 7 **
+	  
+	  
+# example 7
 
 <h1>FOOTER PAGE</h1>
 </main>
@@ -228,7 +222,7 @@ else{
 **********************************
 
 
-** example 8 **
+   # example 8 
 
 <?php
     require __DIR__ . './Header.php';
@@ -348,8 +342,8 @@ else{
 </html>
 
 
-
-** description **
+# description
+	  
 
 1] Accept a number and print like <br>
    4567 <br>
@@ -400,8 +394,7 @@ else{
 
     
     
-    
-** description **    
+# description    
 
 Welcome User 
 <?php 
@@ -415,7 +408,7 @@ AGE <?php echo $_POST['age']; ?><br>
 
 
 
-** description **
+# description 
 	  
 <!DOCTYPE html>
 <html lang="en">
@@ -445,7 +438,7 @@ AGE <?php echo $_POST['age']; ?><br>
 
 
 
-** description **
+# description
 	  
 A constant is a name or an identifier for a fixed value. Constant are like variables, except that once they are defined, they cannot be undefined or changed
 
@@ -463,7 +456,7 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
 
-** description **
+# description 
 <?php
 
     function addition(){
@@ -534,26 +527,26 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
 <?php
-    //Function 1
+    //Function 1 <br>
     function sayHello(){
         echo "Hello from sayHello method";
     }
     sayHello();
 
-    //Function 2
+    //Function 2 <br>
     function sumOfValues($val1, $val2){
         echo "\n\nSum is ".($val1+$val2);
     }
     sumOfValues(10,20);
 
-    //function 3
+    //function 3 <br>
     function getValue(){
         return 100;
     }
 
     echo "\nThe returned value is ".getValue();
 
-    //function 4
+    //function 4 <br>
 
     function addition($val1, $val2){
         return $val1+$val2;
@@ -564,7 +557,7 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
     
-    //call by reference
+    //call by reference <br>
 
     function changeValue(&$str2){
         $str2="Good night";
@@ -589,34 +582,34 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
 
-1] Accept a number and print like 
-   4567 
+1] Accept a number and print like  <br>
+   4567  <br>
    
-   display sum of digits along with format specified below
+   display sum of digits along with format specified below <br>
 
-    4000 + 500 + 60 + 7  = 4567
-    Sum of digits = 22
+    4000 + 500 + 60 + 7  = 4567 <br>
+    Sum of digits = 22 <br>
 
-    use simple / % and without using loop 
+    use simple / % and without using loop  <br>
 
 
-2] Accept a number and print in reverse without using loop 
+2] Accept a number and print in reverse without using loop  <br>
      
-3] Accept three number and check the greate number from three numbers
+3] Accept three number and check the greate number from three numbers <br>
 
 
-4] Accept a number of terms and print fibonacci series 
-   0 1 1 2 3 5 8 13....
+4] Accept a number of terms and print fibonacci series  <br>
+   0 1 1 2 3 5 8 13.... <br>
 
-5] Accept a string and print the characters 
+5] Accept a string and print the characters  <br>
 
-6] write a program to create a directory with name mydir also create a text file 
+6] write a program to create a directory with name mydir also create a text file  <br>
    
-7] Write a program to print even numbers and odd numbers
+7] Write a program to print even numbers and odd numbers <br>
 
-8] Write a program to find factorial number
+8] Write a program to find factorial number <br>
 
-9] Accept a string and print each character in asc order
+9] Accept a string and print each character in asc order <br>
 
 
 
@@ -640,9 +633,9 @@ echo 'Thank you for visiting - ' . SITE_URL;
         echo "\n";
     }
 
-    // for($i = 0; $i <10;$i++) {
-    //     $product=10*$i;
-    //     echo "The product 10 * $i is $product \n";
+    // for($i = 0; $i <10;$i++) { <br>
+    //     $product=10*$i; <br>
+    //     echo "The product 10 * $i is $product \n"; <br>
     // }
 
     
@@ -654,9 +647,9 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
 
-    // echo shell_exec('dir');
-    //OR
-    exec('dir',$commands);
+    // echo shell_exec('dir'); <br>
+    //OR <br>
+    exec('dir',$commands); 
     print_r($commands);
     
     
@@ -667,9 +660,9 @@ echo 'Thank you for visiting - ' . SITE_URL;
 echo php_uname();
     $cmd='set';
     if(substr(php_uname(),0,7)=="Windows"){
-        // pclose(popen("start /B".$cmd,"r"));
-        // exec('c:\WINDOWS\system32\cmd.exe');
-        // echo `dir`;
+        // pclose(popen("start /B".$cmd,"r")); <br>
+        // exec('c:\WINDOWS\system32\cmd.exe'); <br>
+        // echo `dir`; <br>
         
         echo "<pre>".shell_exec($cmd)."</pre>";
     }
