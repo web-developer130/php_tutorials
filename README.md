@@ -170,7 +170,7 @@ else{ <br>
         
   # example 5
 
-  > /*<?php
+  /*<?php
     require __DIR__ . './Header.php';
 
     $request_mathod=strtoupper($_SERVER['REQUEST_METHOD']);
@@ -207,95 +207,11 @@ else{ <br>
 </head>
 <body>
   <main>
-    <h1>HEADER File</h1>
-	  
-	  
-# example 7
-<html>
-<h1>FOOTER PAGE</h1>
-   </main>
-   </body>
-</html>
 
-
-
-
-**********************************
-
-
-   # example 8 
-
- <?php
-  -  require __DIR__ . './Header.php';<br>
-
-
-   - echo "Main part of index.php";<br>
-
-    
-   - require __DIR__ . './Footer.php';<br>
-
-  ?>
-
-
-
-
-
-
-
-
-
--<h1>FOOTER PAGE</h1>
--</main>
-    
--</body>
--</html>
-
-
-
-
-
-
-
-
-
-
-
--<!DOCTYPE html>
--<html lang="en">
--<head>
-  -  <meta charset="UTF-8">
-  -  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   - <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   - <title>Document</title>
--</head>
--<body>
- - <main>
-   - <h1>HEADER File</h1>
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* <!DOCTYPE html>
-*<html lang="en">
-* <head>
-  *   <title>Document</title>
+ <!DOCTYPE html>
+<html lang="en">
+ <head>
+   <title>Document</title>
 </head>
 <body>
     <main>
