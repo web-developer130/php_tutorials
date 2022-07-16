@@ -895,22 +895,22 @@ do{ <br>
 	  
 	  # Example 2.1
 	  
-	  <?php<br><br>
+	  // apply php open close tags before run <br><br>
 
-    //include "Employee.php";<br><br>
-    include "SalesEmployee.php";<br><br>
+    //include "Employee.php";
+    include "SalesEmployee.php";
 
-    $sa1=new SalesEmployees(101,"EShan",100000,4000);<br><br>
-    $sa1->showSalesEmployeesDetails();<br><br>
+    $sa1=new SalesEmployees(101,"EShan",100000,4000);
+    $sa1->showSalesEmployeesDetails();
 
 
-    //$s1=new SalesEmployee(101,"EShan",100000,50000);<br><br>
+    //$s1=new SalesEmployee(101,"EShan",100000,50000);
 
     
 
 
-    // $emp1=new Employee(101,"EShan",100000);<br><br>
-    // $emp1->showEmployeeDeatils();<br><br>
+    // $emp1=new Employee(101,"EShan",100000);
+    // $emp1->showEmployeeDeatils();
 
 
 // $emp1=new Employee(101,"EShan",100000);<br><br>
@@ -918,26 +918,24 @@ do{ <br>
 
 
     // $empRecords=array(<br><br>
-    //     new Employee(101,"EShan",100000),<br><br>
-    //     new Employee(102,"tanish",20000),<br><br>
-    //     new Employee(103,"Suha",400000),<br><br>
-    //     new Employee(104,"Kranti",50000),<br><br>
-    //     new Employee(105,"Paresh",300000)<br><br>
+    //     new Employee(101,"EShan",100000),
+    //     new Employee(102,"tanish",20000),
+    //     new Employee(103,"Suha",400000),
+    //     new Employee(104,"Kranti",50000),
+    //     new Employee(105,"Paresh",300000)
     // );<br><br>
 
 
-    // foreach($empRecords as $rec){<br><br>
-    //     //print_r($rec);<br><br>
-    //     $rec->showEmployeeDeatils();<br><br>
-    // }<br><br>
+    // foreach($empRecords as $rec){
+    //     //print_r($rec);
+    //     $rec->showEmployeeDeatils();
+    // }
 
-?>
 
 
 # example 2.2
 
-
-<?php
+// apply php open close tags before run <br><br>
 class Employee
 {
     private $empId ;
@@ -977,13 +975,12 @@ class Employee
         echo "<br> Employee Destructor is called";
     }
 }
-?>
 
 
 
 # example 2.3
 
-<?php
+// apply php open close tags before run <br><br>
 include 'Employee.php';
 
 class SalesEmployees extends Employee{
@@ -1016,14 +1013,13 @@ class SalesEmployees extends Employee{
 }
 
 
-?>
 
 
 
 # example 2.3
 
 
-<?php
+
 
     class Calculation{
 
@@ -1123,7 +1119,7 @@ class SalesEmployees extends Employee{
 # example 2.4
 
 
-<?php
+// apply php open close tags before run <br><br>
     class Complex
     {
         public $real;
@@ -1153,7 +1149,7 @@ class SalesEmployees extends Employee{
 
 
 
-?>
+
 
 
 
@@ -1162,7 +1158,7 @@ class SalesEmployees extends Employee{
 
 
 
-<?php
+// apply php open close tags before run <br><br>
 class Employee
 {
     private $empId ;
@@ -1207,7 +1203,7 @@ $emp=new Employee(101,"Tanish",1000);
 $emp->showEmployeeDeatils();
 
 
-?>
+
 
 
 # example 2.6
@@ -1215,7 +1211,7 @@ $emp->showEmployeeDeatils();
 
 
 
-<?php
+// apply php open close tags before run <br><br>
 
     class Complex{
         var $real;
@@ -1248,7 +1244,7 @@ $emp->showEmployeeDeatils();
     echo $emp1->getReal();
     echo $emp1->getImag();
 
-?>
+
 
 
 
@@ -1405,7 +1401,7 @@ function openCity(evt, cityName) {
 
 # example 2.9 
 
-<?php
+// apply php open close tags before run <br><br>
 
 $conn=mysqli_connect("localhost","root","");
 if(!$conn){
@@ -1420,7 +1416,6 @@ else{
     }
     }
 
-?>
 
 
 
@@ -1429,7 +1424,7 @@ else{
 
 
 
-<?php
+// apply php open close tags before run <br><br>
 
 $conn=mysqli_connect("localhost","root","");
 if(!$conn){
@@ -1444,11 +1439,6 @@ else{
     mysqli_query($conn,$sql);
     echo "Table is created successfully";
     }
-
-?>
-
-
-
 
 
 
@@ -1565,13 +1555,7 @@ function openCity(evt, cityName) {
 
 
 
-
-
 # example 2.12
-
-
-
-
 
 
 
@@ -1677,9 +1661,7 @@ function openCity(evt, cityName) {
 
 # example 2.13
 
-
-
-<?php
+// apply php open close tags before run <br><br>
     $conn=mysqli_connect("localhost","root","");
     if(!$conn){
         die("Couldn't connect to database");
@@ -1707,14 +1689,11 @@ function openCity(evt, cityName) {
 
     mysqli_close($conn);
 
-?>
-
 
 
    # example 2.14 
 
-
-<?php
+// apply php open close tags before run <br><br>
     $conn=mysqli_connect("localhost","root","");
     if(!$conn){
         die("Couldn't connect to database");
@@ -1731,24 +1710,13 @@ function openCity(evt, cityName) {
 
     mysqli_close($conn);
 
-?>
-
-
-
-
-
 
 
 # example 2.15
 
+// apply php open close tags before run <br><br>
 
 
-
-
-
-
-
-<?php
     $conn=mysqli_connect("localhost","root","");
     if(!$conn){
         die("Couldn't connect to database");
@@ -1766,7 +1734,6 @@ function openCity(evt, cityName) {
     }
 
     mysqli_close($conn);
-?>
 
 
 # example 2.16
@@ -1804,7 +1771,7 @@ function openCity(evt, cityName) {
 # example 2.17
 
 
-<?php
+// apply php open close tags before run <br><br>
     // echo phpinfo();
     $conn=mysqli_connect("localhost","root","");
     if(!$conn){
@@ -1832,7 +1799,7 @@ function openCity(evt, cityName) {
 
     mysqli_close($conn);
 
-?>
+
 
 
 
@@ -1841,7 +1808,7 @@ function openCity(evt, cityName) {
 
 
 
-<?php
+// apply php open close tags before run <br><br>
     $user = "username";
     $pass = "password";
     $host = "host";
@@ -1851,7 +1818,6 @@ $conn = new mysqli($host, $user, $pass, $dbdb);
    if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-?>
 
 
 
@@ -1859,10 +1825,7 @@ $conn = new mysqli($host, $user, $pass, $dbdb);
 # example 2.19
 
 
-extension=php_mysqli.dll
-
-
-
+extension=php_mysqli.dll<br><br>
 
 
 ; Directory in which the loadable extensions (modules) reside.
@@ -1888,26 +1851,13 @@ extension=php_mysqli.dll
 
 
 
-
-
-
-
-
 # example 2.20
-
-
-
 
 
 
 echo phpinfo();
 
-
-
-
-
-
-<?php
+// apply php open close tags before run <br><br>
 
     $conn=mysqli_connect("localhost","root","");
     if(!$conn){
@@ -1924,14 +1874,13 @@ echo phpinfo();
 
     mysqli_close($conn);
 
-?>
 
 
 
 
 # example 2.20
 
-<?php
+// apply php open close tags before run <br><br>
 
     $conn=mysqli_connect("localhost","root","");
     if(!$conn){
@@ -1943,14 +1892,13 @@ echo phpinfo();
 
     mysqli_close($conn);
 
-?>
 
 
 
 
 # example 2.21
 
-<?php
+// apply php open close tags before run <br><br>
 function ascendingOrder($arr){
 
     sort($arr);
@@ -1958,7 +1906,7 @@ function ascendingOrder($arr){
 
 }
 
-?>
+
 
 
 
@@ -1967,7 +1915,7 @@ function ascendingOrder($arr){
 
 # example 2.22 
 
-<?php
+// apply php open close tags before run <br><br>
 
 require __DIR__ . './AscendingOrder.php';
 
@@ -1994,9 +1942,7 @@ do{
             echo "\nInvalid choice\n\n";
     }
     echo "\nDo you want to continue\n";
-    }while(fgetc(STDIN)!='n');
-
-?>
+    }while(fgetc(STDIN)!='n')
 
 
 
@@ -2035,7 +1981,7 @@ f] sum of all elements
 
 
 
-<?php
+// apply php open close tags before run <br><br>
 
     function averageMarks($arr){
         $total=0;
@@ -2054,7 +2000,6 @@ f] sum of all elements
 
 
 
-?>
 
 
 
@@ -2271,7 +2216,7 @@ $my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>
 
     $values=array("C++","JAVA","PHP","SQL","SQL Server","Perl");
 
-    //First way to print values<br><br>
+    //First way to print values
     print_r($values);
 
     //second way to print values
@@ -2280,7 +2225,7 @@ $my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>
         echo $val."\n";
     }
 
-    //Third way to print values<br><br>
+    //Third way to print values
 
     for($n=0;$n<count($values);$n++){
         echo $values[$n]." ";
