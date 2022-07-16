@@ -22,3 +22,13 @@ PHP can be embedded into HTML.<br>
 PHP is an object-oriented language.<br>
 PHP is an open-source scripting language.<br>
 PHP is simple and easy to learn language.<br>
+
+# 1.2
+Started as a Perl hack in 1994 by Rasmus Lerdorf (to handle his resume), developed to PHP/FI 2.0<br> <br>
+<br> <br>
+By 1997 up to PHP 3.0 with a new parser engine by Zeev Suraski and Andi Gutmans
+<br> <br>
+Version 5.2.4 is current version, rewritten by Zend (www.zend.com) to include a number of features, such as an object model<br> <br>
+<br> <br>
+php is one of the premier examples of what an open source project can be<br> <br>
+<br> <br>
