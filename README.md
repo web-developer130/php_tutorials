@@ -90,3 +90,18 @@ print can be used with or without parentheses.<br>
 print always returns an integer value, which is 1.<br>
 Using print, we cannot pass multiple arguments.<br>
 print is slower than echo statement.<br>
+
+
+# examples
+<?php
+	// $val1=(int)readline("Enter an integer value");
+	// $val2=(float)readline("Enter float value");
+	// echo "Values are $val1 $val2";
+
+	
+	$val1=(int)readline("Enter first value");
+	$val2=(int)readline("Enter second value");
+
+	echo "Sum of two number ".($val1+$val2);
+	echo "Sum of".$val1." And ".$val2." is ".($val1+$val2);
+?>
