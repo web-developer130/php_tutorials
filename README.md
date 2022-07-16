@@ -93,7 +93,8 @@ print is slower than echo statement.<br>
 
 
 # examples
-/*<?php
+/*
+<?php
 	// $val1=(int)readline("Enter an integer value");
 	// $val2=(float)readline("Enter float value");
 	// echo "Values are $val1 $val2";
