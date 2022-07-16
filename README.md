@@ -65,6 +65,8 @@ Cross-Platform: Different local systems have different configurations of operat
 Apache: It is an HTTP a cross-platform web server. It is used worldwide for delivering web content. The server application has made free for installation and used for the community of developers under the aegis of Apache Software Foundation. The remote server of Apache delivers the requested files, images, and other documents to the user.<br>
 MariaDB: Originally, MySQL DBMS was a part of XAMPP, but now it has been replaced by MariaDB. It is one of the most widely used relational DBMS, developed by MySQL. It offers online services of data storage, manipulation, retrieval, arrangement, and deletion.<br>
 PHP: It is the backend scripting language primarily used for web development. PHP allows users to create dynamic websites and applications. It can be installed on every platform and supports a variety of database management systems. It was implemented using C language. PHP stands for Hypertext Processor. It is said to be derived from Personal Home Page tools, which explains its simplicity and functionality.<br>
+
+**---------------------**
 Perl: It is a combination of two high-level dynamic languages, namely Perl 5 and Perl 6. Perl can be applied for finding solutions for problems based on system administration, web development, and networking. Perl allows its users to program dynamic web applications. It is very flexible and robust.<br>
 phpMyAdmin: It is a tool used for dealing with MariaDB. Its version 4.0.4 is currently being used in XAMPP. Administration of DBMS is its main role.
 OpenSSL: It is the open-source implementation of the Secure Socket Layer Protocol and Transport Layer Protocol. Presently version 0.9.8 is a part of XAMPP.
@@ -121,24 +123,24 @@ print is slower than echo statement.<br>
 	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2);
 
 	//Another method to accept value from user <br>
-	echo "\nEnter two more numbers\n";
-	fscanf(STDIN,"%d %d",$val1,$val2);
-	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2);
+	echo "\nEnter two more numbers\n"; <br>
+	fscanf(STDIN,"%d %d",$val1,$val2); <br>
+	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2); <br>
 
 ?>*/
  ** example 3 **
-/*<?php
+/*<?php 
 
-if(isset($_POST['name'],$_POST['email'])){
-    $name=htmlspecialchars($_POST['name']);
-    $email=htmlspecialchars($_POST['email']);
+if(isset($_POST['name'],$_POST['email'])){ <br>
+    $name=htmlspecialchars($_POST['name']); <br>
+    $email=htmlspecialchars($_POST['email']); <br>
 
-    echo "Thank you user $name";
-    echo "Your email id is  $email";
-}
-else{
-    echo "You need to provide details";
-}
+    echo "Thank you user $name"; <br>
+    echo "Your email id is  $email"; <br>
+} <br>
+else{ <br>
+    echo "You need to provide details"; <br>
+} <br>
 
 ?>*/
 
@@ -148,9 +150,9 @@ else{
 ** example 4 **
 
 
-<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
-            <div>
-                <label for="name">Name:</label>
+<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> <br>
+            <div> <br>
+                <label for="name">Name:</label> <br>
                 <input type="text" name="name" required="required" placeholder="Enter Your name"/>
             </div>
             <div>
