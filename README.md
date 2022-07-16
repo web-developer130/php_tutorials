@@ -318,8 +318,8 @@ else{
             </form>
 
 
-        <?php else : ?>
-            <?php
+        <?php else : ?> <br>
+            <?php <br>
 
                 if(isset($_POST['name'],$_POST['email'])){
                     $name=htmlspecialchars($_POST['name']);
@@ -459,8 +459,8 @@ echo 'Thank you for visiting - ' . SITE_URL;
 # description 
 <?php
 
-    function addition(){
-        echo "Enter two numbers\n";
+    function addition(){ <br>
+        echo "Enter two numbers\n"; <br>
         $num1=(int)readline("Enter first number");
         $num2=(int)readline("Enter second number");
         
@@ -524,49 +524,49 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
 
+# examples
 
-
-<?php
+<?php <br>
     //Function 1 <br>
-    function sayHello(){
-        echo "Hello from sayHello method";
+    function sayHello(){ <br>
+        echo "Hello from sayHello method"; <br>
     }
-    sayHello();
+    sayHello(); <br>
 
     //Function 2 <br>
-    function sumOfValues($val1, $val2){
-        echo "\n\nSum is ".($val1+$val2);
+    function sumOfValues($val1, $val2){ <br>
+        echo "\n\nSum is ".($val1+$val2); <br>
     }
-    sumOfValues(10,20);
+    sumOfValues(10,20); <br>
 
     //function 3 <br>
-    function getValue(){
-        return 100;
+    function getValue(){ <br>
+        return 100; <br>
     }
 
-    echo "\nThe returned value is ".getValue();
+    echo "\nThe returned value is ".getValue(); <br>
 
     //function 4 <br>
 
-    function addition($val1, $val2){
-        return $val1+$val2;
+    function addition($val1, $val2){ <br>
+        return $val1+$val2; <br>
     }
 
-    echo "\nThe addition is  ".addition(44,45);
+    echo "\nThe addition is  ".addition(44,45); <br>
     
 
 
     
     //call by reference <br>
 
-    function changeValue(&$str2){
-        $str2="Good night";
+    function changeValue(&$str2){ <br>
+        $str2="Good night"; <br>
     }
 
-    $str="Good morning";
-    echo "\nBefore passing value is".$str;
-    changeValue($str);
-    echo "\nAfter passing value is".$str;
+    $str="Good morning"; <br>
+    echo "\nBefore passing value is".$str; <br>
+    changeValue($str); <br>
+    echo "\nAfter passing value is".$str; <br>
 
     
     
