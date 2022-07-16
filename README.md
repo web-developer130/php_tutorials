@@ -112,15 +112,15 @@ print is slower than echo statement.<br>
 #         example 2.0
 
 /*<?php
-	 $val1=(int)readline("Enter an integer value");
-          $val2=(float)readline("Enter float value");
-	echo "Values are $val1 $val2";
+	 $val1=(int)readline("Enter an integer value"); <br>
+          $val2=(float)readline("Enter float value"); <br>
+	echo "Values are $val1 $val2"; <br>
 
-	$val1=(int)readline("Enter first value");
-	$val2=(int)readline("Enter second value");
+	$val1=(int)readline("Enter first value"); <br>
+	$val2=(int)readline("Enter second value"); <br>
 
-	echo "Sum of two number ".($val1+$val2);
-	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2);
+	echo "Sum of two number ".($val1+$val2); <br>
+	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2); <br>
 
 	//Another method to accept value from user <br>
 	echo "\nEnter two more numbers\n"; <br>
@@ -147,7 +147,7 @@ else{ <br>
 
 
 
-** example 4 **
+# example 4
 
 
 <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> <br>
