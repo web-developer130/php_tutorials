@@ -1,6 +1,6 @@
 # php_tutorials
 
-#DAY 1 study Materials
+# DAY 1 study Materials
 
 PHP is server side scripting system 
 PHP stands for "PHP: Hypertext Preprocessor"
