@@ -2247,4 +2247,1911 @@ The require() function performs same as the include() function. It also takes th
 The only difference is — the include() statement will only generate a PHP warning but allow script execution to continue if the file to be included can't be found, whereas the require() statement will generate a fatal error and stops the script execution.
 	  
         
+  # ========================
+  # DAY 3 SESSION -:
+  # =======================
+  https://www.tecmint.com/install-yii-framework-on-ubuntu/
+    
+    
+    
+    
+    
+
+
+>Installing Yii
+With Composer installed, you can install Yii application template by running the following command under a Web-accessible folder:
+
+composer create-project --prefer-dist yiisoft/yii2-app-basic basic
+This will install the latest stable version of Yii application template in a directory named basic. You can choose a different directory name if you want.
+
+
+
+
+
+
+>YII framework is an open-source PHP framework for rapidly-developing, modern Web applications. It is built around the Model-View-Controller composite pattern.
+Yii provides secure and professional features to create robust projects rapidly. The Yii framework has a component-based architecture and a full solid caching support. Therefore, it is suitable for building all kinds of Web applications: forums, portals, content managements systems, RESTful services, e-commerce websites, and so forth. It also has a code generation tool called Gii that includes the full CRUD(Create-Read-Update-Delete) interface maker.
+Core Features
+The core features of Yii are as follows −
+Yii implements the MVC architectural pattern.
+It provides features for both relational and NoSQL databases.
+Yii never over-designs things for the sole purpose of following some design pattern.
+It is extremely extensible.
+Yii provides multi-tier caching support.
+Yii provides RESTful API development support.
+It has high performance.
+
+
+
+
+
+
+
+
+
+$to="@gmail.com";
+$subject="Test mail";
+$message="Hello";
+$from="@gmail.com";
+$headers="From:$from";
+mail($to,$subject,$message,$headers);
+echo "mail sent";
+
+
+
+
+
+
+
+
+
+>First, make sure you PHP installation has SSL support (look for an "openssl" section in the output from phpinfo()).
+
+You can set the following settings in your PHP.ini:
+
+ini_set("SMTP","ssl://smtp.gmail.com");
+ini_set("smtp_port","465");
+
+
+
+
+
+
+
+
+>Now Open C:\xampp\sendmail\sendmail.ini. Replace all the existing code in sendmail.ini with following code
+
+[sendmail]
+
+>smtp_server=smtp.gmail.com
+smtp_port=587
+error_logfile=error.log
+debug_logfile=debug.log
+auth_username=my-gmail-id@gmail.com
+auth_password=my-gmail-password
+force_sender=my-gmail-id@gmail.com
+
+
+
+
+
+
+
+
+
+C:\xampp\php\php.ini
+
+>in C:\xampp\php\php.ini find extension=php_openssl.dll and remove the semicolon from the beginning of that line to make SSL working for gmail for localhost.
+
+in php.ini file find [mail function] and change
+
+>SMTP=smtp.gmail.com
+smtp_port=587
+sendmail_from = my-gmail-id@gmail.com
+sendmail_path = "C:\xampp\sendmail\sendmail.exe -t"
+
+
+
+
+
+
+if you are using XAMPP then you can easily send mail from localhost.
+
+for example you can configure C:\xampp\php\php.ini and c:\xampp\sendmail\sendmail.ini for gmail to send mail.
+
         
+        
+        
+        
+
+
+
+//php_spreadsheet_export.php
+
+include 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+$severname="localhost";
+$username="root";
+$password="";
+$dbname="mydb";
+
+$conn=mysqli_connect($severname,$username,$password,$dbname);
+
+// $id=$_REQUEST['empId'];
+// $name=$_REQUEST['name'];
+// $salary=$_REQUEST['salary'];
+
+
+//check connection
+if($conn->connect_error){
+    echo "Error connecting to mysql";
+}
+else{
+    echo "connected successfully";
+}
+
+
+$select_query="select * from employee";
+$result=$conn->query($select_query);
+
+// if($result->num_rows>0){
+//     while($row=$result->fetch_assoc()){
+//         echo "Records are ".$row["empId"]." Name".$row["name"]."Salary".$row["salary"]."<br>";
+//     }
+// }
+
+
+// $query = "SELECT * FROM sample_datas ORDER BY id DESC";
+
+// $statement = $connect->prepare($query);
+
+// $statement->execute();
+
+// $result = $statement->fetchAll();
+
+if(isset($_POST["export"]))
+{
+  $file = new Spreadsheet();
+
+  $active_sheet = $file->getActiveSheet();
+
+  $active_sheet->setCellValue('A1', 'First Name');
+  $active_sheet->setCellValue('B1', 'Last Name');
+  $active_sheet->setCellValue('C1', 'Created At');
+  $active_sheet->setCellValue('D1', 'Updated At');
+
+  $count = 2;
+
+  foreach($result as $row)
+  {
+    $active_sheet->setCellValue('A' . $count, $row["empId"]);
+    $active_sheet->setCellValue('B' . $count, $row["name"]);
+    $active_sheet->setCellValue('C' . $count, $row["salary"]);
+    
+
+    $count = $count + 1;
+  }
+
+  $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($file, $_POST["file_type"]);
+
+  $file_name = time() . '.' . strtolower($_POST["file_type"]);
+
+  $writer->save($file_name);
+
+  header('Content-Type: application/x-www-form-urlencoded');
+
+  header('Content-Transfer-Encoding: Binary');
+
+  header("Content-disposition: attachment; filename=\"".$file_name."\"");
+
+  readfile($file_name);
+
+  unlink($file_name);
+
+  exit;
+
+}
+
+
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Export Data From Mysql to Excel using PHPSpreadsheet</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+   </head>
+   <body>
+     <div class="container">
+      <br />
+      <h3 align="center">Export Data From Mysql to Excel using PHPSpreadsheet</h3>
+      <br />
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <form method="post">
+              <div class="row">
+                <div class="col-md-6">User Data</div>
+                <div class="col-md-4">
+                  <select name="file_type" class="form-control input-sm">
+                    <option value="Xlsx">Xlsx</option>
+                    <option value="Xls">Xls</option>
+                    <option value="Csv">Csv</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <input type="submit" name="export" class="btn btn-primary btn-sm" value="Export" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="panel-body">
+          <div class="table-responsive">
+           <table class="table table-striped table-bordered">
+                <tr>
+                  <th>empId</th>
+                  <th>Name</th>
+                  <th>salary</th>
+                  
+                </tr>
+                <?php
+
+                foreach($result as $row)
+                {
+                  echo '
+                  <tr>
+                    <td>'.$row["empId"].'</td>
+                    <td>'.$row["name"].'</td>
+                    <td>'.$row["salary"].'</td>
+                    
+                  </tr>
+                  ';
+                }
+                ?>
+
+              </table>
+          </div>
+          </div>
+        </div>
+     </div>
+      <br />
+      <br />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+ 
+ <body>
+  <h3 class="text-primary text-center">
+    Morris js charts
+  </h3>
+  <div class"row">
+    <div class="col-sm-6 text-center">
+      <label class="label label-success">Area Chart</label>
+      <div id="area-chart" ></div>
+    </div>
+    <div class="col-sm-6 text-center">
+       <label class="label label-success">Line Chart</label>
+      <div id="line-chart"></div>
+    </div>
+    <div  class="col-sm-6 text-center">
+       <label class="label label-success">Bar Chart</label>
+      <div id="bar-chart" ></div>
+    </div>
+    <div class="col-sm-6 text-center">
+       <label class="label label-success">Bar stacked</label>
+      <div id="stacked" ></div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 text-center">
+       <label class="label label-success">Pie Chart</label>
+      <div id="pie-chart" ></div>
+    </div>
+    
+  </div>
+</body>
+
+ </body>
+</html>
+
+
+<script>
+  
+    var data = [
+      { y: '2014', a: 50, b: 90},
+      { y: '2015', a: 65,  b: 75},
+      { y: '2016', a: 50,  b: 50},
+      { y: '2017', a: 75,  b: 60},
+      { y: '2018', a: 80,  b: 65},
+      { y: '2019', a: 90,  b: 70},
+      { y: '2020', a: 100, b: 75},
+      { y: '2021', a: 115, b: 75},
+      { y: '2022', a: 120, b: 85},
+      { y: '2023', a: 145, b: 85},
+      { y: '2024', a: 160, b: 95}
+    ],
+    config = {
+      data: data,
+      xkey: 'y',
+      ykeys: ['a', 'b'],
+      labels: ['Total Income', 'Total Outcome'],
+      fillOpacity: 0.6,
+      hideHover: 'auto',
+      behaveLikeLine: true,
+      resize: true,
+      pointFillColors:['#ffffff'],
+      pointStrokeColors: ['black'],
+      lineColors:['gray','red']
+  };
+
+config.element = 'area-chart';
+Morris.Area(config);
+config.element = 'line-chart';
+Morris.Line(config);
+config.element = 'bar-chart';
+Morris.Bar(config);
+config.element = 'stacked';
+config.stacked = true;
+Morris.Bar(config);
+Morris.Donut({
+  element: 'pie-chart',
+  data: [
+    {label: "Friends", value: 30},
+    {label: "Allies", value: 15},
+    {label: "Enemies", value: 45},
+    {label: "Neutral", value: 10}
+  ]
+});
+</script>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Morris.js chart with PHP & Mysql</h2>
+   <h3 align="center">Last 10 Years Profit, Purchase and Sale Data</h3>   
+   <br /><br />
+   <div id="myfirstchart" style="height: 250px;"></div>
+
+  </div>
+ </body>
+</html>
+
+
+<script>
+   
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+</script>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Morris.js chart with PHP & Mysql</h2>
+   <h3 align="center">Last 10 Years Profit, Purchase and Sale Data</h3>   
+   <br /><br />
+   <div id="area-example" style="height: 250px;"></div>
+
+  </div>
+ </body>
+</html>
+
+
+<script>
+    Morris.Area({
+  element: 'area-example',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+</script>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Morris.js chart with PHP & Mysql</h2>
+   <h3 align="center">Last 10 Years Profit, Purchase and Sale Data</h3>   
+   <br /><br />
+   <div id="bar-example" style="height: 250px;"></div>
+
+  </div>
+ </body>
+</html>
+
+
+<script>
+    Morris.Bar({
+  element: 'bar-example',
+  data: [
+    { y: 'HTML', a: 100},
+    { y: '2007', a: 75},
+    { y: '2008', a: 50}
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: ['Series A']
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+//index.php
+$connect = mysqli_connect("localhost", "root", "", "testdb");
+$query = "SELECT * FROM account";
+$result = mysqli_query($connect, $query);
+$chart_data = '';
+while($row = mysqli_fetch_array($result))
+{
+ $chart_data .= "{ year:'".$row["year"]."', profit:".$row["profit"].", purchase:".$row["purchase"].", sale:".$row["sale"]."}, ";
+}
+$chart_data = substr($chart_data, 0, -2);
+print_r($chart_data);
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Morris.js chart with PHP & Mysql</h2>
+   <h3 align="center">Last 10 Years Profit, Purchase and Sale Data</h3>   
+   <br /><br />
+   <div id="chart"></div>
+  </div>
+ </body>
+</html>
+
+<script>
+Morris.Bar({
+ element : 'chart',
+ data:[<?php echo $chart_data; ?>],
+ xkey:'year',
+ ykeys:['profit', 'purchase', 'sale'],
+ labels:['Profit', 'Purchase', 'Sale'],
+ hideHover:'auto',
+ stacked:true
+});
+</script>
+
+
+
+
+
+
+
+
+<script>
+    var data = [
+      { y: '2014', a: 50, b: 90},
+      { y: '2015', a: 65,  b: 75},
+      { y: '2016', a: 50,  b: 50},
+      { y: '2017', a: 75,  b: 60},
+      { y: '2018', a: 80,  b: 65},
+      { y: '2019', a: 90,  b: 70},
+      { y: '2020', a: 100, b: 75},
+      { y: '2021', a: 115, b: 75},
+      { y: '2022', a: 120, b: 85},
+      { y: '2023', a: 145, b: 85},
+      { y: '2024', a: 160, b: 95}
+    ],
+    config = {
+      data: data,
+      xkey: 'y',
+      ykeys: ['a', 'b'],
+      labels: ['Total Income', 'Total Outcome'],
+      fillOpacity: 0.6,
+      hideHover: 'auto',
+      behaveLikeLine: true,
+      resize: true,
+      pointFillColors:['#ffffff'],
+      pointStrokeColors: ['black'],
+        
+      lineColors:['gray','red']
+  };
+
+config.element = 'area-chart';
+Morris.Area(config);
+config.element = 'line-chart';
+Morris.Line(config);
+config.element = 'bar-chart';
+Morris.Bar(config);
+config.element = 'stacked';
+config.stacked = true;
+Morris.Bar(config);
+Morris.Donut({
+  element: 'pie-chart',
+  data: [
+    {label: "Friends", value: 30},
+    {label: "Allies", value: 15},
+    {label: "Enemies", value: 45},
+    {label: "Neutral", value: 10}
+  ]
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<body>
+  <h3 class="text-primary text-center">
+    Morris js charts
+  </h3>
+  <div class"row">
+    <div class="col-sm-6 text-center">
+      <label class="label label-success">Area Chart</label>
+      <div id="area-chart" ></div>
+    </div>
+    <div class="col-sm-6 text-center">
+       <label class="label label-success">Line Chart</label>
+      <div id="line-chart"></div>
+    </div>
+    <div  class="col-sm-6 text-center">
+       <label class="label label-success">Bar Chart</label>
+      <div id="bar-chart" ></div>
+    </div>
+    <div class="col-sm-6 text-center">
+       <label class="label label-success">Bar stacked</label>
+      <div id="stacked" ></div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 text-center">
+       <label class="label label-success">Pie Chart</label>
+      <div id="pie-chart" ></div>
+    </div>
+    
+  </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="myfirstchart" style="height: 250px;"></div>
+
+new Morris.Line({
+  // ID of the element in which to draw the chart.
+  element: 'myfirstchart',
+  // Chart data records -- each entry in this array corresponds to a point on
+  // the chart.
+  data: [
+    { year: '2008', value: 20 },
+    { year: '2009', value: 10 },
+    { year: '2010', value: 5 },
+    { year: '2011', value: 5 },
+    { year: '2012', value: 20 }
+  ],
+  // The name of the data record attribute that contains x-values.
+  xkey: 'year',
+  // A list of names of data record attributes that contain y-values.
+  ykeys: ['value'],
+  // Labels for the ykeys -- will be displayed when you hover over the
+  // chart.
+  labels: ['Value']
+});
+
+
+
+
+
+
+
+<div id="area-example"></div>
+Morris.Area({
+  element: 'area-example',
+  data: [
+    { y: '2006', a: 100, b: 90 },
+    { y: '2007', a: 75,  b: 65 },
+    { y: '2008', a: 50,  b: 40 },
+    { y: '2009', a: 75,  b: 65 },
+    { y: '2010', a: 50,  b: 40 },
+    { y: '2011', a: 75,  b: 65 },
+    { y: '2012', a: 100, b: 90 }
+  ],
+  xkey: 'y',
+  ykeys: ['a', 'b'],
+  labels: ['Series A', 'Series B']
+});
+</script>
+
+
+
+
+
+
+
+
+<div id="bar-example" style="height: 250px;"></div>
+
+
+
+Morris.Bar({
+  element: 'bar-example',
+  data: [
+    { y: 'HTML', a: 100},
+    { y: '2007', a: 75},
+    { y: '2008', a: 50}
+  ],
+  xkey: 'y',
+  ykeys: ['a'],
+  labels: ['Series A']
+});
+
+
+
+
+
+
+//index.php
+$connect = mysqli_connect("localhost", "root", "", "testdb");
+$query = "SELECT * FROM account";
+$result = mysqli_query($connect, $query);
+$chart_data = '';
+while($row = mysqli_fetch_array($result))
+{
+ $chart_data .= "{ year:'".$row["year"]."', profit:".$row["profit"].", purchase:".$row["purchase"].", sale:".$row["sale"]."}, ";
+}
+$chart_data = substr($chart_data, 0, -2);
+
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Morris.js chart with PHP & Mysql</h2>
+   <h3 align="center">Last 10 Years Profit, Purchase and Sale Data</h3>   
+   <br /><br />
+   <div id="chart"></div>
+  </div>
+ </body>
+</html>
+
+<script>
+Morris.Bar({
+ element : 'chart',
+ data:[<?php echo $chart_data; ?>],
+ xkey:'year',
+ ykeys:['profit', 'purchase', 'sale'],
+ labels:['Profit', 'Purchase', 'Sale'],
+ hideHover:'auto',
+ stacked:true
+});
+</script>
+
+
+
+
+CREATE TABLE IF NOT EXISTS `account` (
+  `id` int(11) NOT NULL,
+  `year` int(11) NOT NULL,
+  `purchase` int(11) NOT NULL,
+  `sale` int(11) NOT NULL,
+  `profit` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`id`, `year`, `purchase`, `sale`, `profit`) VALUES
+(1, 2007, 550000, 800000, 250000),
+(2, 2008, 678000, 1065000, 387000),
+(3, 2009, 787000, 1278500, 491500),
+(4, 2010, 895600, 1456000, 560400),
+(5, 2011, 967150, 1675600, 708450),
+(6, 2012, 1065850, 1701542, 635692),
+(7, 2013, 1105600, 1895000, 789400),
+(8, 2014, 1465000, 2256500, 791500),
+(9, 2015, 1674500, 2530000, 855500),
+(10, 2016, 2050000, 3160000, 1110000);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `account`
+--
+ALTER TABLE `account`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+
+
+
+
+
+
+
+
+
+
+
+date_default_timezone_set('Asia/Kolkata');
+// echo date("Y-m-d H:i:s");
+
+$dateTimeNow = time();
+//call the autoload
+require 'vendor/autoload.php';
+//load phpspredsheet class using namespaces
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+//call xlsx writer class to make an xlsx file
+use PhpOffice\PhpSpreadsheet\IOFactory;
+//use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+$excelDateValue = PhpOffice\PhpSpreadsheet\Shared\Date::PHPToExcel( $dateTimeNow );
+
+//make a new spreadsheet object
+$spreadsheet = new Spreadsheet();
+
+//get currect active sheet(first sheet)
+$sheet = $spreadsheet->getActiveSheet();
+
+// Set cell A1 with a string value
+$spreadsheet->getActiveSheet()->setCellValue('A1', 10);
+
+// Set cell A2 with a numeric value
+$spreadsheet->getActiveSheet()->setCellValue('A2', 20);
+
+// Set cell A3 with a boolean value
+$spreadsheet->getActiveSheet()->setCellValue('A3', TRUE);
+
+// Set cell A4 with a formula
+$spreadsheet->getActiveSheet()->setCellValue(
+    'A4','=IF(A3, CONCATENATE(A1, " ", A2), CONCATENATE(A2, " ", A1))'
+);
+$spreadsheet->getActiveSheet()->setCellValue(
+    'A7','=SUM(A1:A2)'
+);
+
+$spreadsheet->getActiveSheet()->setCellValue(
+    'A8',
+    $excelDateValue
+);
+
+
+$spreadsheet->getActiveSheet()->getStyle('A8')
+    ->getNumberFormat()
+    ->setFormatCode(PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_DATE_DATETIME);
+
+
+
+
+header('Content-Disposition:attachement;filename="result.xlsx"');
+
+$writer=IOFactory::createWriter($spreadsheet,'Xlsx');
+
+
+
+$writer->save('php://output');
+
+
+
+
+//make an xlsx writer object using above spreadsheet
+// $writer = new Xlsx($spreadsheet);
+
+//write the file in currect directory
+//$writer->save('myFile.xlsx');
+
+
+
+
+
+
+
+
+
+
+$ sudo apt-get install php7.0-intl
+
+$ sudo /etc/init.d/php7.0-fpm restart
+
+
+
+
+$ sudo apt-get install php7.1-mbstring
+
+$ sudo apt-get install php7.1-xml
+
+$ sudo apt-get install php7.1-zip
+
+
+
+
+
+
+
+sudo apt-get install php-xml
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+// require_once('path/vendor/autoload.php');
+// Load an .xlsx file
+$spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load(‘hello.xlsx');
+   
+// Store data from the activeSheet to the varibale
+// in the form of Array
+   
+$data = array(1,$spreadsheet->getActiveSheet()
+            ->toArray(null,true,true,true));
+  
+// Display the sheet content
+var_dump($data);
+
+
+                                                         
+                                                         
+                                                         
+
+
+
+
+
+
+
+
+
+
+// require_once('vendor/autoload.php');
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+// Creates New Spreadsheet
+$spreadsheet = new Spreadsheet();
+// Retrieve the current active worksheet
+$sheet = $spreadsheet->getActiveSheet();
+// Set the value of cell A1
+$sheet->setCellValue('A1', ‘Hello PHP');
+// Sets the value of cell B1
+$sheet->setCellValue('B1', 'A Computer Science Portal For Geeks');
+// Write an .xlsx file 
+$writer = new Xlsx($spreadsheet);
+  
+// Save .xlsx file to the current directory
+$writer->save(‘hello.xlsx');
+
+              
+              
+              
+
+
+
+
+
+
+
+
+
+
+
+// Get the current date/time and convert to an Excel date/time
+$dateTimeNow = time();
+$excelDateValue = \PhpOffice\PhpSpreadsheet\Shared\Date::PHPToExcel( $dateTimeNow );
+// Set cell A6 with the Excel date/time value
+$spreadsheet->getActiveSheet()->setCellValue(
+    'A6',
+    $excelDateValue
+);
+// Set the number format mask so that the excel timestamp will be displayed as a human-readable date/time
+$spreadsheet->getActiveSheet()->getStyle('A6')
+    ->getNumberFormat()
+    ->setFormatCode(
+        \PhpOffice\PhpSpreadsheet\Style\NumberFormat::FORMAT_DATE_DATETIME
+    );
+
+    
+    
+    
+    
+    
+
+
+
+
+composer self-update 2.1.6
+
+
+
+
+
+require_once('vendor/autoload.php');
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+$spreadsheet = new Spreadsheet();
+$sheet = $spreadsheet->getActiveSheet();
+// $sheet->setCellValue('A1', 'Hello World !');
+
+// Set cell A1 with a string value
+$spreadsheet->getActiveSheet()->setCellValue('A1', 10);
+
+// Set cell A2 with a numeric value
+$spreadsheet->getActiveSheet()->setCellValue('A2', 20);
+
+// Set cell A3 with a boolean value
+$spreadsheet->getActiveSheet()->setCellValue('A3', 30);
+
+// Set cell A4 with a formula
+$spreadsheet->getActiveSheet()->setCellValue(
+    'A6',
+    '=SUM(A1:A3)'
+);
+
+$writer = new Xlsx($spreadsheet);
+$writer->save('example1.xlsx');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Set cell A1 with a string value
+$spreadsheet->getActiveSheet()->setCellValue('A1', 'PhpSpreadsheet');
+
+// Set cell A2 with a numeric value
+$spreadsheet->getActiveSheet()->setCellValue('A2', 12345.6789);
+
+// Set cell A3 with a boolean value
+$spreadsheet->getActiveSheet()->setCellValue('A3', TRUE);
+
+// Set cell A4 with a formula
+$spreadsheet->getActiveSheet()->setCellValue(
+    'A4',
+    '=IF(A3, CONCATENATE(A1, " ", A2), CONCATENATE(A2, " ", A1))'
+);
+
+
+
+
+
+
+
+EXAMPLE 1
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Load Excel Sheet in Browser using PHPSpreadsheet</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+   </head>
+   <body>
+     <div class="container">
+      <br />
+      <h3 align="center">Load Excel Sheet in Browser using PHPSpreadsheet</h3>
+      <br />
+      <div class="table-responsive">
+       <span id="message"></span>
+          <form method="post" id="load_excel_form" enctype="multipart/form-data">
+            <table class="table">
+              <tr>
+                <td width="25%" align="right">Select Excel File</td>
+                <td width="50%"><input type="file" name="select_excel" /></td>
+                <td width="25%"><input type="submit" name="load" class="btn btn-primary" /></td>
+              </tr>
+            </table>
+          </form>
+       <br />
+          <div id="excel_area"></div>
+      </div>
+     </div>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  </body>
+</html>
+<script>
+$(document).ready(function(){
+  $('#load_excel_form').on('submit', function(event){
+    event.preventDefault();
+    $.ajax({
+      url:"upload.php",
+      method:"POST",
+      data:new FormData(this),
+      contentType:false,
+      cache:false,
+      processData:false,
+      success:function(data)
+      {
+        $('#excel_area').html(data);
+        $('table').css('width','100%');
+      }
+    })
+  });
+});
+</script>
+
+
+
+
+
+# Upload.php
+
+
+
+//upload.php
+
+include 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\IOFactory;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+
+if($_FILES["select_excel"]["name"] != '')
+{
+ $allowed_extension = array('xls', 'xlsx');
+ $file_array = explode(".", $_FILES['select_excel']['name']);
+ $file_extension = end($file_array);
+ if(in_array($file_extension, $allowed_extension))
+ {
+  $reader = IOFactory::createReader('Xlsx');
+  $spreadsheet = $reader->load($_FILES['select_excel']['tmp_name']);
+  $writer = IOFactory::createWriter($spreadsheet, 'Html');
+  $message = $writer->save('php://output');
+ }
+ else
+ {
+  $message = '<div class="alert alert-danger">Only .xls or .xlsx file allowed</div>';
+ }
+}
+else
+{
+ $message = '<div class="alert alert-danger">Please Select File</div>';
+}
+
+echo $message;
+
+
+
+
+EXAMPLE 2
+
+2] EXPORT DATA
+
+<?php
+
+//php_spreadsheet_export.php
+
+include 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+$severname="localhost";
+$username="root";
+$password="";
+$dbname="myphpdb";
+
+$conn=mysqli_connect($severname,$username,$password,$dbname);
+
+$id=$_REQUEST['empId'];
+$name=$_REQUEST['name'];
+$salary=$_REQUEST['salary'];
+
+
+//check connection
+if($conn->connect_error){
+    echo "Error connecting to mysql";
+}
+else{
+    echo "connected successfully";
+}
+
+
+$select_query="select * from employee";
+$result=$conn->query($select_query);
+
+// if($result->num_rows>0){
+//     while($row=$result->fetch_assoc()){
+//         echo "Records are ".$row["empId"]." Name".$row["name"]."Salary".$row["salary"]."<br>";
+//     }
+// }
+
+
+// $query = "SELECT * FROM sample_datas ORDER BY id DESC";
+
+// $statement = $connect->prepare($query);
+
+// $statement->execute();
+
+// $result = $statement->fetchAll();
+
+if(isset($_POST["export"]))
+{
+  $file = new Spreadsheet();
+
+  $active_sheet = $file->getActiveSheet();
+
+  $active_sheet->setCellValue('A1', 'First Name');
+  $active_sheet->setCellValue('B1', 'Last Name');
+  $active_sheet->setCellValue('C1', 'Created At');
+  $active_sheet->setCellValue('D1', 'Updated At');
+
+  $count = 2;
+
+  foreach($result as $row)
+  {
+    $active_sheet->setCellValue('A' . $count, $row["empId"]);
+    $active_sheet->setCellValue('B' . $count, $row["name"]);
+    $active_sheet->setCellValue('C' . $count, $row["salary"]);
+    
+
+    $count = $count + 1;
+  }
+
+  $writer = \PhpOffice\PhpSpreadsheet\IOFactory::createWriter($file, $_POST["file_type"]);
+
+  $file_name = time() . '.' . strtolower($_POST["file_type"]);
+
+  $writer->save($file_name);
+
+  header('Content-Type: application/x-www-form-urlencoded');
+
+  header('Content-Transfer-Encoding: Binary');
+
+  header("Content-disposition: attachment; filename=\"".$file_name."\"");
+
+  readfile($file_name);
+
+  unlink($file_name);
+
+  exit;
+
+}
+
+
+<!DOCTYPE html>
+<html>
+   <head>
+     <title>Export Data From Mysql to Excel using PHPSpreadsheet</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+   </head>
+   <body>
+     <div class="container">
+      <br />
+      <h3 align="center">Export Data From Mysql to Excel using PHPSpreadsheet</h3>
+      <br />
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <form method="post">
+              <div class="row">
+                <div class="col-md-6">User Data</div>
+                <div class="col-md-4">
+                  <select name="file_type" class="form-control input-sm">
+                    <option value="Xlsx">Xlsx</option>
+                    <option value="Xls">Xls</option>
+                    <option value="Csv">Csv</option>
+                  </select>
+                </div>
+                <div class="col-md-2">
+                  <input type="submit" name="export" class="btn btn-primary btn-sm" value="Export" />
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="panel-body">
+          <div class="table-responsive">
+           <table class="table table-striped table-bordered">
+                <tr>
+                  <th>empId</th>
+                  <th>Name</th>
+                  <th>salary</th>
+                  
+                </tr>
+                <?php
+
+                foreach($result as $row)
+                {
+                  echo '
+                  <tr>
+                    <td>'.$row["empId"].'</td>
+                    <td>'.$row["name"].'</td>
+                    <td>'.$row["salary"].'</td>
+                    
+                  </tr>
+                  ';
+                }
+                ?>
+
+              </table>
+          </div>
+          </div>
+        </div>
+     </div>
+      <br />
+      <br />
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  </body>
+</html>
+
+
+
+
+# EXAMPLE 3
+
+
+
+//index.php
+$connect = mysqli_connect("localhost", "root", "", "testing");
+$query = "SELECT * FROM account";
+$result = mysqli_query($connect, $query);
+$chart_data = '';
+while($row = mysqli_fetch_array($result))
+{
+ $chart_data .= "{ year:'".$row["year"]."', profit:".$row["profit"].", purchase:".$row["purchase"].", sale:".$row["sale"]."}, ";
+}
+$chart_data = substr($chart_data, 0, -2);
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Webslesson Tutorial | How to use Morris.js chart with PHP & Mysql</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+  
+ </head>
+ <body>
+  <br /><br />
+  <div class="container" style="width:900px;">
+   <h2 align="center">Morris.js chart with PHP & Mysql</h2>
+   <h3 align="center">Last 10 Years Profit, Purchase and Sale Data</h3>   
+   <br /><br />
+   <div id="chart"></div>
+  </div>
+ </body>
+</html>
+
+<script>
+Morris.Bar({
+ element : 'chart',
+ data:[<?php echo $chart_data; ?>],
+ xkey:'year',
+ ykeys:['profit', 'purchase', 'sale'],
+ labels:['Profit', 'Purchase', 'Sale'],
+ hideHover:'auto',
+ stacked:true
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+require 'vendor/autoload.php';
+use phpoffice\phpspreadsheet\src\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
+$spreadsheet = new Spreadsheet();
+$sheet = $spreadsheet->getActiveSheet();
+$sheet->setCellValue('A1', 'Hello World !');
+
+$writer = new Xlsx($spreadsheet);
+$writer->save('hello world.xlsx');
+
+
+
+
+//call the autoload
+require 'vendor/autoload.php';
+//load phpspredsheet class using namespaces
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+//call IOFactory instead of xlsx writer
+use PhpOffice\PhpSpreadsheet\IOFactory;
+//make a new spreadsheet object
+$spreadsheet = new Spreadsheet();
+//get currect active sheet(first sheet)
+$sheet = $spreadsheet->getActiveSheet();
+//set the value of cell a1 to "Hello World"
+$sheet->setCellValue('A1', 'Hello World !');
+//set the header first , so the resule will be treadted as an xlsx file
+header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+//make it ans attachement so we can define filename
+header('Content-Disposition:attachement;filename="result.xlsx"');
+//create IOFactory object
+$writer=IOFactory::createWriter($spreadsheet,'Xlsx');
+//save into php output
+$writer->save('php://output');
+
+
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+composer self-update 2.1.6
+
+
+
+composer require phpoffice/phpspreadsheet --prefer-source
+
+
+composer install
+
+
+
+
+
+
+
+
+> require 'C:/xampp/vendor/autoload.php';
+
+
+
+
+
+
+
+//call the autoload
+require 'vendor/autoload.php';
+//load phpspredsheet class using namespaces
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+//call xlsx writer class to make an xlsx file
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+//make a new spreadsheet object
+$spreadsheet = new Spreadsheet();
+//get currect active sheet(first sheet)
+$sheet = $spreadsheet->getActiveSheet();
+//set the value of cell a1 to "Hello World"
+$sheet->setCellValue('A1', 'Hello World !');
+//make an xlsx writer object using above spreadsheet
+$writer = new Xlsx($spreadsheet);
+//write the file in currect directory
+$writer->save('hello world.xlsx');
+
+
+
+
+
+
+
+
+
+
+
+
+1] composer require phpoffice/phpspreadsheet
+
+2] uncomment 
+  extension=gd  from C:\xampp\php\php.ini
+
+
+
+
+        
+        
+        
+
+
+# https://getcomposer.org/
+
+    
+    
+
+
+>Composer is a tool for dependency management in PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.
+
+Composer:<br><br>
+Enables you to declare the libraries you depend on.
+Finds out which versions of which packages can and need to be installed, and installs them (meaning it downloads them into your project).
+You can update all your dependencies in one command.
+
+
+    
+    
+    
+
+
+
+1] Create class Employee with empId,name,salary 
+   create another class with named SalesEmployee with sales,commission,netSalary variables
+   create calculateSalary method to calculate commission and netSalary based on salary from Employee class
+
+   if sales<5000
+   commission is 3% on salary
+   
+   sales>=5000 < 10000
+   commission is 5% on salary
+
+   sales>=10000 & <15000
+   commission is 10% on salary
+
+
+   sales>15000
+   commission is 15% on salary
+
+  netSalary = salary+commission
+
+
+
+    include "Employee.php";
+    // include "SalesEmployee.php";
+
+    // $sa1=new SalesEmployees(101,"EShan",100000,4000);
+    // $sa1->showSalesEmployeesDetails();
+
+
+
+
+
+
+
+
+    //$s1=new SalesEmployee(101,"EShan",100000,50000);
+
+    
+
+
+    // $emp1=new Employee(101,"EShan",100000);
+    // $emp1->showEmployeeDeatils();
+
+
+// $emp1=new Employee(101,"EShan",100000);
+// $emp1->showEmployeeDeatils();
+
+
+    $empRecords=array(
+        new Employee(101,"EShan",100000),
+        new Employee(102,"tanish",20000),
+        new Employee(103,"Suha",400000),
+        new Employee(104,"Kranti",50000),
+        new Employee(105,"Paresh",300000)
+    );
+
+
+    foreach($empRecords as $rec){
+        //print_r($rec);
+        $rec->showEmployeeDeatils();
+    }
+
+
+
+
+
+
+
+
+
+include 'Employee.php';
+
+class SalesEmployees extends Employee{
+    private $sales;
+    private $commissions;
+    private $netSalary;
+
+    function __construct($empId,$empName,$salary,$sales){
+        parent::__construct($empId,$empName,$salary);  //calling base class Employee constructor    
+        echo "<br>Parameterised constructor of SalesEmployees is called";
+ 
+        $this->sales = $sales;
+        $this->commissions = 0;
+        $this->netSalary = 0;
+    }
+
+
+    public function showSalesEmployeesDetails(){
+        echo "<br>Sales Employee ".$this->sales." ".$this->commissions." ".$this->netSalary;
+        parent::showEmployeeDeatils();
+
+    }
+
+
+    public function __destruct(){
+        echo "<br>Sales Employee __destruct is called";
+    }
+
+
+}
+
+
+
+
+
+
+
+
+class Employee
+{
+    private $empId ;
+    private $empName;
+    private $salary;
+
+
+    function __construct( $empId, $empName, $salary)    {
+        echo "<br>Parameterised constructor of Employee is called";
+        $this->empId = $empId;
+        $this->empName = $empName;
+        $this->salary = $salary;
+    }
+
+  
+
+    function calculateSalary(){
+        echo "<br> calculateSalary is called";
+    }
+
+    function setSalary($newSalary){
+        echo "setSalary is called";
+        $this->salary = $newSalary;
+    }
+
+    function getSalary(){
+        echo "getSalary is called";
+        return $this->salary;
+    }
+
+    function showEmployeeDeatils(){
+        echo "<br>Employee Deatils : ".$this->empId." Name :- ".$this->empName." Salary".$this->salary;
+        
+    }
+
+    function __destruct(){
+        echo "<br> Employee Destructor is called";
+    }
+}
+
+
+
+
+
+
+
+class Person{
+    public $name;
+    public $age;
+    public function __construct($name,$age){
+        echo "Constructor is called"."\n";
+        $this->name = $name;
+        $this->age = $age;
+        echo 'The class "',__CLASS__,'"is initialized'."\n";
+    }
+
+    public function __destruct(){
+        echo "Destructor is called"."\n";
+    }
+
+    public function getAge(){
+        return $this->age;
+    }
+
+    public function __toString(){
+        echo "Using toString method"."\n";
+        return $this->name." ".$this->getAge()."\n";
+
+    }
+}
+
+
+
+$per=new Person("Tanish",21);
+echo $per;
+
+
+$arr=array(new Person("Tanish",21),new Person("Manish",34),new Person("Amit",34));
+print_r($arr);
+
+
+
+
+
+
+
+
+class Person{
+    public $age;
+    public function __construct($age){
+        echo "Constructor is called"."\n";
+        $this->age = $age;
+        echo 'The class "',__CLASS__,'"is initialized'."\n";
+    }
+
+    public function __destruct(){
+        echo "Destructor is called"."\n";
+    }
+
+    public function getAge(){
+        return $this->age;
+    }
+
+    public function __toString(){
+        echo "Using toString method"."\n";
+        return $this->getAge()."\n";
+    }
+}
+
+$per=new Person(21);
+echo $per;
+
+
+
+
+
+
+
+
+
+class Person{
+    public $age;
+
+    public function __construct($age){
+        echo "Constructor is called"."\n";
+        $this->age = $age;
+        echo 'The class "',__CLASS__,'"is initialized'."\n";
+    }
+
+    public function __destruct(){
+        echo "Destructor is called"."\n";
+    }
+
+}
+
+$per=new Person(21);
+
+
+
+
+
+
+# http://aroma.vn/web/wp-content/uploads/2016/11/code-complete-2nd-edition-v413hav.pdf
+    
+    
+    
+    
+    
+    
+
+
+
+class Employee
+{
+    private $empId ;
+    private $empName;
+    private $salary;
+
+
+    function __construct( $empId, $empName, $salary)    {
+        echo "<br>Parameterised constructor of Employee is called";
+        $this->empId = $empId;
+        $this->empName = $empName;
+        $this->salary = $salary;
+    }
+
+  
+    function calculateSalary(){
+        echo "<br> calculateSalary is called";
+    }
+
+    function setSalary($newSalary){
+        echo "setSalary is called";
+        $this->salary = $newSalary;
+    }
+
+    function getSalary(){
+        echo "getSalary is called";
+        return $this->salary;
+    }
+
+    function showEmployeeDeatils(){
+        echo "<br>Employee Deatils : ".$this->empId." Name :- ".$this->empName." Salary".$this->salary;
+        
+    }
+
+    function __destruct(){
+        echo "<br> Employee Destructor is called";
+    }
+}
+
+$emp=new Employee(101,"Tanish",1000);
+$emp->showEmployeeDeatils();
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
