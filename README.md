@@ -25,10 +25,21 @@ PHP is simple and easy to learn language.<br>
 
 # 1.2
 Started as a Perl hack in 1994 by Rasmus Lerdorf (to handle his resume), developed to PHP/FI 2.0<br> <br>
-<br> <br>
+
 By 1997 up to PHP 3.0 with a new parser engine by Zeev Suraski and Andi Gutmans
 <br> <br>
 Version 5.2.4 is current version, rewritten by Zend (www.zend.com) to include a number of features, such as an object model<br> <br>
-<br> <br>
+
 php is one of the premier examples of what an open source project can be<br> <br>
-<br> <br>
+
+
+# 1.3
+PHP is a server-side scripting language, which is used to design the dynamic web applications with MySQL database. <br>
+It handles dynamic content, database as well as session tracking for the website. <br>
+You can create sessions in PHP. <br>
+It can access cookies variable and also set cookies. <br>
+It helps to encrypt the data and apply validation. <br>
+PHP supports several protocols such as HTTP, POP3, SNMP, LDAP, IMAP, and many more. <br>
+Using PHP language, you can control the user to access some pages of your website. <br>
+As PHP is easy to install and set up, this is the main reason why PHP is the best language to learn. <br>
+PHP can handle the forms, such as - collect the data from users using forms, save it into the database, and return useful information to the user. For example - Registration form. <br>
