@@ -880,32 +880,32 @@ do{
 
 <?php
     //If conditional statement <br>
-    $d=date('D');
-    echo $d;
+    $d=date('D'); <br>
+    echo $d; <br>
 
-    if($d=='Fri') 
-        echo "Lets have party tonight\n";
-    else 
-        echo "Lets go back to work\n";
+    if($d=='Fri')  <br>
+        echo "Lets have party tonight\n"; <br>
+    else  <br>
+        echo "Lets go back to work\n"; <br>
 
 
     //Netsted if else <br>
 
-    $a=10;
-    $b=20;
-    if($a>$b)
-        echo "\n".$a." is greater than ".$b;
-    elseif($a<$b)
-        echo "\n".$a." is smaller than ".$b;
-    else
-        echo "\nBoth are equal.";
+    $a=10; <br>
+    $b=20; <br>
+    if($a>$b) <br>
+        echo "\n".$a." is greater than ".$b; <br>
+    elseif($a<$b) <br>
+        echo "\n".$a." is smaller than ".$b; <br>
+    else <br>
+        echo "\nBoth are equal."; <br>
 
 
     //Sample student information <br>
 
-    $name=readline("\nEnter your name");
-    $age=(int)readline("\nEnter your age");
-    $marks=(int)readline("\nEnter your marks");
+    $name=readline("\nEnter your name"); <br>
+    $age=(int)readline("\nEnter your age"); <br>
+    $marks=(int)readline("\nEnter your marks"); <br>
 
     if($marks<33)
         echo "\nFail";
@@ -930,28 +930,28 @@ do{
 # examples
 
 
-<?php
+<?php <br>
     //If conditional statement  <br>
-    $d=date('D');
-    echo $d;
+    $d=date('D');  <br>
+    echo $d; <br>
 
-    if($d=='Fri') 
-        echo "Lets have party tonight\n";
-    else 
-        echo "Lets go back to work\n";
+    if($d=='Fri')  <br>
+        echo "Lets have party tonight\n"; <br>
+    else  <br>
+        echo "Lets go back to work\n"; <br>
 
 
     //Netsted if else  <br>
 
-    $a=10;
-    $b=20;
-    if($a>$b)
-        echo "\n".$a." is greater than ".$b;
-    elseif($a<$b)
-        echo "\n".$a." is smaller than ".$b;
-    else
-        echo "\nBoth are equal.";
-?>
+    $a=10; <br>
+    $b=20; <br>
+    if($a>$b) <br>
+        echo "\n".$a." is greater than ".$b; <br>
+    elseif($a<$b) <br>
+        echo "\n".$a." is smaller than ".$b; <br>
+    else <br>
+        echo "\nBoth are equal."; <br>
+?> <br>
 
 
 
@@ -962,11 +962,11 @@ do{
 
 
 
-1] PHP server <br>
-2] PHP Unterlephense <br>
-3] settings <br>
-    file.associations <br>
-    *.module  value: php <br>
+  PHP server <br>
+  PHP Unterlephense <br>
+  settings <br>
+  file.associations <br>
+  *.module  value: php <br>
 
         
         
