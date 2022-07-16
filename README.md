@@ -66,15 +66,15 @@ XAMPP (Cross, Apache, MySQL, PHP, Perl) for Cross Platform: It includes some ot
 > MariaDB: Originally, MySQL DBMS was a part of XAMPP, but now it has been replaced by MariaDB. It is one of the most widely used relational DBMS, developed by MySQL. It offers online services of data storage, manipulation, retrieval, arrangement, and deletion.<br>
 > PHP: It is the backend scripting language primarily used for web development. PHP allows users to create dynamic websites and applications. It can be installed on every platform and supports a variety of database management systems. It was implemented using C language. PHP stands for Hypertext Processor. It is said to be derived from Personal Home Page tools, which explains its simplicity and functionality.<br>
 
-**---------------------**
-Perl: It is a combination of two high-level dynamic languages, namely Perl 5 and Perl 6. Perl can be applied for finding solutions for problems based on system administration, web development, and networking. Perl allows its users to program dynamic web applications. It is very flexible and robust.<br>
-phpMyAdmin: It is a tool used for dealing with MariaDB. Its version 4.0.4 is currently being used in XAMPP. Administration of DBMS is its main role.
-OpenSSL: It is the open-source implementation of the Secure Socket Layer Protocol and Transport Layer Protocol. Presently version 0.9.8 is a part of XAMPP.
+
+> Perl: It is a combination of two high-level dynamic languages, namely Perl 5 and Perl 6. Perl can be applied for finding solutions for problems based on system administration, web development, and networking. Perl allows its users to program dynamic web applications. It is very flexible and robust.<br>
+> phpMyAdmin: It is a tool used for dealing with MariaDB. Its version 4.0.4 is currently being used in XAMPP. Administration of DBMS is its main role.
+> OpenSSL: It is the open-source implementation of the Secure Socket Layer Protocol and Transport Layer Protocol. Presently version 0.9.8 is a part of XAMPP.
 XAMPP Control Panel: It is a panel that helps to operate and regulate upon other components of the XAMPP. Version 3.2.1 is the most recent update. A detailed description of the control panel will be done in the next section of the tutorial.<br>
-Webalizer: It is a Web Analytics software solution used for User logs and provide details about the usage.<br>
-Mercury: It is a mail transport system, and its latest version is 4.62. It is a mail server, which helps to manage the mails across the web.<br>
-Tomcat: Version 7.0.42 is currently being used in XAMPP. It is a servlet based on JAVA to provide JAVA functionalities.<br>
-Filezilla: It is a File Transfer Protocol Server, which supports and eases the transfer operations performed on files. Its recently updated version is 0.9.41.<br>
+> Webalizer: It is a Web Analytics software solution used for User logs and provide details about the usage.<br>
+> Mercury: It is a mail transport system, and its latest version is 4.62. It is a mail server, which helps to manage the mails across the web.<br>
+> Tomcat: Version 7.0.42 is currently being used in XAMPP. It is a servlet based on JAVA to provide JAVA functionalities.<br>
+> Filezilla: It is a File Transfer Protocol Server, which supports and eases the transfer operations performed on files. Its recently updated version is 0.9.41.<br>
 
 # 1.6  
 # https://www.apachefriends.org/download.html
@@ -96,7 +96,7 @@ print is slower than echo statement.<br>
 
 # examples
 #           example 1.0 
-/*<?php <br>
+> /*<?php <br>
 
 	 $val1=(int)readline("Enter an integer value"); 
 	$val2=(float)readline("Enter float value"); 
@@ -111,7 +111,7 @@ print is slower than echo statement.<br>
 
 #         example 2.0
 
-/*<?php
+> /*<?php
 	 $val1=(int)readline("Enter an integer value"); <br>
           $val2=(float)readline("Enter float value"); <br>
 	echo "Values are $val1 $val2"; <br>
@@ -128,8 +128,8 @@ print is slower than echo statement.<br>
 	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2); <br>
 
 ?>*/
- ** example 3 **
-/*<?php 
+ # example 3 
+> /*<?php 
 
 if(isset($_POST['name'],$_POST['email'])){ <br>
     $name=htmlspecialchars($_POST['name']); <br>
@@ -150,7 +150,7 @@ else{ <br>
 # example 4
 
 
-<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> <br>
+> <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> <br>
             <div> <br>
                 <label for="name">Name:</label> <br>
                 <input type="text" name="name" required="required" placeholder="Enter Your name"/>
@@ -170,7 +170,7 @@ else{ <br>
         
   # example 5
 
-  /*<?php
+  > /*<?php
     require __DIR__ . './Header.php';
 
     $request_mathod=strtoupper($_SERVER['REQUEST_METHOD']);
