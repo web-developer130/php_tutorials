@@ -129,7 +129,7 @@ print is slower than echo statement.<br>
 
 ?>*/
  # example 3 
-> /*<?php 
+ /*<?php 
 
 if(isset($_POST['name'],$_POST['email'])){ <br>
     $name=htmlspecialchars($_POST['name']); <br>
@@ -150,7 +150,7 @@ else{ <br>
 # example 4
 
 
-> <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> <br>
+ <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST"> <br>
             <div> <br>
                 <label for="name">Name:</label> <br>
                 <input type="text" name="name" required="required" placeholder="Enter Your name"/>
@@ -225,7 +225,7 @@ else{ <br>
 
    # example 8 
 
->  > > <?php
+ <?php
   -  require __DIR__ . './Header.php';<br>
 
 
