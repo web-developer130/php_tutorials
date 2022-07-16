@@ -677,8 +677,8 @@ echo php_uname();
 
 echo php_uname();
     if(substr(php_uname(),0,7)=="Windows"){
-        // pclose(popen("start /B".$cmd,"r"));
-        // exec('c:\WINDOWS\system32\cmd.exe');
+        // pclose(popen("start /B".$cmd,"r")); <br>
+        // exec('c:\WINDOWS\system32\cmd.exe'); <br>
         echo `dir`;
     }
     
@@ -691,7 +691,7 @@ echo php_uname();
 $commands=null;
     $retval=null;
     exec("dir",$commands,$retval);
-    // echo $commands[0];
+    // echo $commands[0]; <br>
     print_r($commands);
     echo("RETURN VALUE ".$retval);
     
@@ -735,10 +735,10 @@ do{
     //while loop example
 
     // $i=1;
-    // while($i<=10){
-    //     echo "\nValue is".$i."\n";
-    //     $i++;
-    // }
+    // while($i<=10){ <br>
+    //     echo "\nValue is".$i."\n"; <br>
+    //     $i++; <br>
+    // } <br>
 
     //do while loop example
     $i=1;
@@ -858,20 +858,20 @@ do{
 
 
 
-1] Accept a number and print like 
-   4567 
+1] Accept a number and print like  <br>
+   4567  <br>
    
-   display sum of digits along with format specified below
+   display sum of digits along with format specified below  <br>
 
-    4000 + 500 + 60 + 7  = 4567
-    Sum of digits = 22
+    4000 + 500 + 60 + 7  = 4567 <br>
+    Sum of digits = 22 <br>
 
-    use simple / % and without using loop 
+    use simple / % and without using loop  <br>
 
 
-2] Accept a number and print in reverse without using loop 
+2] Accept a number and print in reverse without using loop  <br>
      
-3] Accept three number and check the greate number from three numbers
+3] Accept three number and check the greate number from three numbers <br>
 
 
 
@@ -879,7 +879,7 @@ do{
 
 
 <?php
-    //If conditional statement
+    //If conditional statement <br>
     $d=date('D');
     echo $d;
 
@@ -889,7 +889,7 @@ do{
         echo "Lets go back to work\n";
 
 
-    //Netsted if else
+    //Netsted if else <br>
 
     $a=10;
     $b=20;
@@ -901,7 +901,7 @@ do{
         echo "\nBoth are equal.";
 
 
-    //Sample student information
+    //Sample student information <br>
 
     $name=readline("\nEnter your name");
     $age=(int)readline("\nEnter your age");
@@ -931,7 +931,7 @@ do{
 
 
 <?php
-    //If conditional statement
+    //If conditional statement  <br>
     $d=date('D');
     echo $d;
 
@@ -941,7 +941,7 @@ do{
         echo "Lets go back to work\n";
 
 
-    //Netsted if else
+    //Netsted if else  <br>
 
     $a=10;
     $b=20;
@@ -962,11 +962,11 @@ do{
 
 
 
-1] PHP server
-2] PHP Unterlephense
-3] settings
-    file.associations
-    *.module  value: php
+1] PHP server <br>
+2] PHP Unterlephense <br>
+3] settings <br>
+    file.associations <br>
+    *.module  value: php <br>
 
         
         
