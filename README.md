@@ -616,7 +616,7 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
 
 
-
+# examples
 
 
 
@@ -644,7 +644,7 @@ echo 'Thank you for visiting - ' . SITE_URL;
     
     
     
-
+# examples
 
 
     // echo shell_exec('dir'); <br>
@@ -655,7 +655,7 @@ echo 'Thank you for visiting - ' . SITE_URL;
     
     
     
-    
+# examples
 
 echo php_uname();
     $cmd='set';
@@ -673,7 +673,7 @@ echo php_uname();
     
     
     
-
+# examples
 
 echo php_uname();
     if(substr(php_uname(),0,7)=="Windows"){
@@ -686,7 +686,7 @@ echo php_uname();
     
     
     
-    
+ # examples   
 
 $commands=null;
     $retval=null;
@@ -724,7 +724,7 @@ do{
 
     
     
-    
+# examples
     
     
     
@@ -760,7 +760,7 @@ do{
 ?>
 
 
-
+# examples
 
 
 
@@ -797,7 +797,7 @@ do{
     
     
     
-    
+ # examples
 
 
 <?php
@@ -826,7 +826,7 @@ do{
 
 
 
-
+# examples
 
 
 
@@ -855,7 +855,7 @@ do{
 ?>
 
 
-
+# examples
 
 
 1] Accept a number and print like  <br>
@@ -875,7 +875,7 @@ do{
 
 
 
-
+# examples
 
 
 <?php
@@ -927,7 +927,7 @@ do{
 ?>
 
 
-
+# examples
 
 
 <?php
