@@ -890,5 +890,1417 @@ do{ <br>
   # =======================================================================================
   
 	  # Day 2 cotaints
+	  
+	  
+	  
+	  # Example 2.1
+	  
+	  <?php<br><br>
+
+    //include "Employee.php";<br><br>
+    include "SalesEmployee.php";<br><br>
+
+    $sa1=new SalesEmployees(101,"EShan",100000,4000);<br><br>
+    $sa1->showSalesEmployeesDetails();<br><br>
+
+
+    //$s1=new SalesEmployee(101,"EShan",100000,50000);<br><br>
+
+    
+
+
+    // $emp1=new Employee(101,"EShan",100000);<br><br>
+    // $emp1->showEmployeeDeatils();<br><br>
+
+
+// $emp1=new Employee(101,"EShan",100000);<br><br>
+// $emp1->showEmployeeDeatils();<br><br>
+
+
+    // $empRecords=array(<br><br>
+    //     new Employee(101,"EShan",100000),<br><br>
+    //     new Employee(102,"tanish",20000),<br><br>
+    //     new Employee(103,"Suha",400000),<br><br>
+    //     new Employee(104,"Kranti",50000),<br><br>
+    //     new Employee(105,"Paresh",300000)<br><br>
+    // );<br><br>
+
+
+    // foreach($empRecords as $rec){<br><br>
+    //     //print_r($rec);<br><br>
+    //     $rec->showEmployeeDeatils();<br><br>
+    // }<br><br>
+
+?>
+
+
+# example 2.2
+
+
+<?php
+class Employee
+{
+    private $empId ;
+    private $empName;
+    private $salary;
+
+
+    function __construct( $empId, $empName, $salary)    {
+        echo "<br>Parameterised constructor of Employee is called";
+        $this->empId = $empId;
+        $this->empName = $empName;
+        $this->salary = $salary;
+    }
+
+  
+
+    function calculateSalary(){
+        echo "<br> calculateSalary is called";
+    }
+
+    function setSalary($newSalary){
+        echo "setSalary is called";
+        $this->salary = $newSalary;
+    }
+
+    function getSalary(){
+        echo "getSalary is called";
+        return $this->salary;
+    }
+
+    function showEmployeeDeatils(){
+        echo "<br>Employee Deatils : ".$this->empId." Name :- ".$this->empName." Salary".$this->salary;
+        
+    }
+
+    function __destruct(){
+        echo "<br> Employee Destructor is called";
+    }
+}
+?>
+
+
+
+# example 2.3
+
+<?php
+include 'Employee.php';
+
+class SalesEmployees extends Employee{
+    private $sales;
+    private $commissions;
+    private $netSalary;
+
+    function __construct($empId,$empName,$salary,$sales){
+        parent::__construct($empId,$empName,$salary);  //calling base class Employee constructor    
+        echo "<br>Parameterised constructor of SalesEmployees is called";
+ 
+        $this->sales = $sales;
+        $this->commissions = 0;
+        $this->netSalary = 0;
+    }
+
+
+    public function showSalesEmployeesDetails(){
+        echo "<br>Sales Employee ".$this->sales." ".$this->commissions." ".$this->netSalary;
+        parent::showEmployeeDeatils();
+
+    }
+
+
+    public function __destruct(){
+        echo "<br>Sales Employee __destruct is called";
+    }
+
+
+}
+
+
+?>
+
+
+
+# example 2.3
+
+
+<?php
+
+    class Calculation{
+
+
+        function __call($name_of_function,$arguments){
+
+            echo $name_of_function;
+            print_r($arguments);
+            // if($name_of_function=='add'){
+            //     // echo count($arguments);
+            //     switch(count($arguments)){
+            //         case 1:
+            //             return $arguments[0];
+            //             break;
+            //         case 2:
+            //             return $arguments[0]+$arguments[1];            
+            //             break;
+            //     }
+            // }
+        }
+    }
+
+
+    $obj1=new Calculation();
+
+  //  echo $obj1->add(10,20);
+
+  $obj1->abc(100);
+  $obj1->xyz(100,200);
+
+
+
+
+    // $obj1->add(100,200);
+
+
+    // class Message{
+    //     function formatMessage($message){
+    //         return printf("<i>%s</i>", $message);
+    //     }
+    // }
+
+
+    // class BoldMessage extends Message{
+    //     function formatMessage($message){
+    //         return printf("<b>%s</b>", $message);
+    //     }
+    // }
+
+
+
+    // $msg=new Message();
+    // $msg->formatMessage("PHP is good");
+
+    // $msg=new BoldMessage();
+    // $msg->formatMessage("PHP is good");
+
+
+
+    // class A{
+    //     function show(){
+    //         echo "<br>show method from A class ";
+    //     }
+    // }
+
+    // class B extends A{
+    //     function show(){
+    //         echo "<br>show method from B class ";
+    //     }
+
+    // }
+
+    // class C extends B{
+    //     function show(){
+    //         echo "<br>show method from C class ";
+    //     }
+
+    //     function call(){
+    //         $this->show(); ///current class
+    //         parent::show(); //base class show method 
+    //         A::show(); //grand Parent show method
+
+    //     }
+    // }
+
+
+    // $cObj=new C();
+    // $cObj->call();
+
+
+
+
+
+
+
+?>
+# example 2.4
+
+
+<?php
+    class Complex
+    {
+        public $real;
+        public $imag;
+
+        //Constructor
+
+        function __construct($real=0, $imag=0){
+            echo "Parameterised constructor is called<br>";
+            $this->real = $real;
+            $this->imag = $imag;
+        }
+
+        //Descructor
+        function __destruct(){
+            echo "Destructor is called<br>";
+        }
+
+      
+    }
+
+    $c1=new Complex();
+    $c2=new Complex();
+    // unset($c1);
+    // unset($c2);
+     
+
+
+
+?>
+
+
+
+# example 2.5
+
+
+
+
+<?php
+class Employee
+{
+    private $empId ;
+    private $empName;
+    private $salary;
+
+
+    function __construct( $empId, $empName, $salary)    {
+        echo "<br>Parameterised constructor of Employee is called";
+        $this->empId = $empId;
+        $this->empName = $empName;
+        $this->salary = $salary;
+    }
+
+  
+
+    function calculateSalary(){
+        echo "<br> calculateSalary is called";
+    }
+
+    function setSalary($newSalary){
+        echo "setSalary is called";
+        $this->salary = $newSalary;
+    }
+
+    function getSalary(){
+        echo "getSalary is called";
+        return $this->salary;
+    }
+
+    function showEmployeeDeatils(){
+        echo "<br>Employee Deatils : ".$this->empId." Name :- ".$this->empName." Salary".$this->salary;
+        
+    }
+
+    function __destruct(){
+        echo "<br> Employee Destructor is called";
+    }
+}
+
+$emp=new Employee(101,"Tanish",1000);
+$emp->showEmployeeDeatils();
+
+
+?>
+
+
+# example 2.6
+
+
+
+
+<?php
+
+    class Complex{
+        var $real;
+        var $imag;
+
+        //Member methods setters
+        function setReal($real){
+            $this->real = $real;
+        }
+        function setImag($imag){
+            $this->imag = $imag;
+        }
+
+        //getters 
+
+        function getReal(){
+            return $this->real;
+        }
+
+        function getImag(){
+            return $this->imag;
+        }
+
+    }
+
+    $emp1=new Complex;
+    $emp1->setReal(100);
+    $emp1->setImag(200);
+
+    echo $emp1->getReal();
+    echo $emp1->getImag();
+
+?>
+
+
+
+# example 2.7
+
+>Class − This is a programmer-defined data type, which includes local functions as well as local data. You can think of a class as a template for making many instances of the same kind (or class) of object.<br><br>
+Object − An individual instance of the data structure defined by a class. You define a class once and then make many objects that belong to it. Objects are also known as instance.<br><br>
+Member Variable − These are the variables defined inside a class. This data will be invisible to the outside of the class and can be accessed via member functions. These variables are called attribute of the object once an object is created.<br><br>
+Member function − These are the function defined inside a class and are used to access object data.<br><br>
+Inheritance − When a class is defined by inheriting existing function of a parent class then it is called inheritance. Here child class will inherit all or few member functions and variables of a parent class.<br><br>
+Parent class − A class that is inherited from by another class. This is also called a base class or super class.<br><br>
+Child Class − A class that inherits from another class. This is also called a subclass or derived class.<br><br>
+Polymorphism − This is an object oriented concept where same function can be used for different purposes. For example function name will remain same but it take different number of arguments and can do different task.<br><br>
+Overloading − a type of polymorphism in which some or all of operators have different implementations depending on the types of their arguments. Similarly functions can also be overloaded with different implementation.<br><br>
+Data Abstraction − Any representation of data in which the implementation details are hidden (abstracted).<br><br>
+Encapsulation − refers to a concept where we encapsulate all the data and member functions together to form an object.<br><br>
+Constructor − refers to a special type of function which will be called automatically whenever there is an object formation from a class.<br><br>
+Destructor − refers to a special type of function which will be called automatically whenever an object is deleted or goes out of scope.<br><br>
+
+
+
+
+
+# example 2.8
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+    </script>
+    <style>
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+        </style>
+</head>
+<body>
+
+    <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Create Database </button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Create Table</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Show Records</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <form action="createDatabase.php" method="post">
+    Enter database Name <input type="text" name="create_database"></br>
+    <input type="submit" value="Create database"/>
+
+
+  </form>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Create table</h3>
+  <?php
+        
+  ?>
+  <select name="list_of_databases">
+  <?php
+    $conn=mysqli_connect("localhost","root","");
+    while($databases=mysqli_fetch_array($all_databases,MYSQLI_ASSOC)){ ?>
+        <option value=" <?php echo $databases ?>"></option>
+    <?php
+    
+    }
+    ?>
+  ?>
+  </select>
+  <form action="createTable.php" method="post">
+
+    Enter Table Name <input type="text" name="create_table"></br>
+    <input type="submit" value="Create Table"/>
+  </form>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Show Records</h3>
+    <table border='5px'>
+       <tr>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+
+       </tr>
+
+    </table>
+</div>
+    
+</body>
+</html>
+
+
+# example 2.9 
+
+<?php
+
+$conn=mysqli_connect("localhost","root","");
+if(!$conn){
+    die("Couldn't connect to database");
+}
+else{
+    echo "Connecting to database";
+    if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS $_POST[create_database]")){
+        echo "Database created successfully";
+    }else{
+        echo "Database not created successfully";
+    }
+    }
+
+?>
+
+
+
+
+# example 2.10
+
+
+
+<?php
+
+$conn=mysqli_connect("localhost","root","");
+if(!$conn){
+    die("Couldn't connect to database");
+}
+else{
+    $table_name=$_POST['create_table'];
+    mysqli_select_db($conn,"testdb");
+    $sql="CREATE TABLE $table_name(FirstName varchar(15),LastName varchar(15), Age int);";
+
+    //EXECUTE QUERY
+    mysqli_query($conn,$sql);
+    echo "Table is created successfully";
+    }
+
+?>
+
+
+
+
+
+
+
+# example 2.11
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+    </script>
+    <style>
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+        </style>
+</head>
+<body>
+
+    <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Create Database </button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Create Table</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Show Records</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <form action="createDatabase.php" method="post">
+    Enter database Name <input type="text" name="create_database"></br>
+    <input type="submit" value="Create database"/>
+
+
+  </form>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Create table</h3>
+  <form action="createTable.php" method="post">
+
+    Enter Table Name <input type="text" name="create_table"></br>
+    <input type="submit" value="Create Table"/>
+  </form>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+# example 2.12
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+function openCity(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+    </script>
+    <style>
+        .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+        </style>
+</head>
+<body>
+
+    <!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+</div>
+
+<!-- Tab content -->
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+    
+</body>
+</html>
+
+
+# example 2.13
+
+
+
+<?php
+    $conn=mysqli_connect("localhost","root","");
+    if(!$conn){
+        die("Couldn't connect to database");
+    }
+    mysqli_select_db($conn,"mydb");
+
+    $result=mysqli_query($conn,"SELECT * FROM persons");
+    // print_r($result);
+
+    // while($row=mysqli_fetch_array($result)){
+    //     echo $row['FirstName']." ".$row['LastName']." ".$row['Age']."\n";
+    // }
+
+    echo "<table border='1'>
+        <tr>
+        <th>First Name</th><th>LastName</th><th>Age</th></tr>
+        </table>";
+    while($row=mysqli_fetch_array($result)){
+        echo "<tr>";
+            echo "<td>".$row['FirstName']."</td>";
+            echo "<td>".$row['LastName']."</td>";
+            echo "<td>".$row['Age']."</td>";
+        echo "</tr>";
+    }
+
+    mysqli_close($conn);
+
+?>
+
+
+
+   # example 2.14 
+
+
+<?php
+    $conn=mysqli_connect("localhost","root","");
+    if(!$conn){
+        die("Couldn't connect to database");
+    }
+    mysqli_select_db($conn,"mydb");
+
+    $result=mysqli_query($conn,"SELECT * FROM persons");
+    print_r($result);
+
+    while($row=mysqli_fetch_array($result)){
+        echo $row['FirstName']." ".$row['LastName']." ".$row['Age']."\n";
+    }
+
+
+    mysqli_close($conn);
+
+?>
+
+
+
+
+
+
+
+# example 2.15
+
+
+
+
+
+
+
+
+<?php
+    $conn=mysqli_connect("localhost","root","");
+    if(!$conn){
+        die("Couldn't connect to database");
+    }
+    
+    mysqli_select_db($conn,"mydb");
+    $sql="INSERT INTO persons(FirstName,LastName,age) values('$_POST[firstname]','$_POST[lastname]','$_POST[age]')";
+    echo $sql;
+
+    if(!mysqli_query($conn,$sql)){
+        die("Couldn't insert values into persons");
+    }
+    else{
+        echo "1 record inserted into persons";
+    }
+
+    mysqli_close($conn);
+?>
+
+
+# example 2.16
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="insert.php" method="post">
+        FirstName <input type="text" name="firstname"/><br>
+        LastName <input type="text" name="lastname"/><br>
+        Age <input type="text" name="age"/><br>
+
+        <input type="submit" value="SUBMIT">
+
+
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+# example 2.17
+
+
+<?php
+    // echo phpinfo();
+    $conn=mysqli_connect("localhost","root","");
+    if(!$conn){
+        die("Couldn't connect to database");
+    }
+    else{
+        echo "Connecting to database";
+        // if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS mydb")){
+        //     echo "Database created successfully";
+        // }else{
+        //     echo "Database not created successfully";
+        // }
+
+
+        //CREATE TABLE inside any particular database
+
+        mysqli_select_db($conn,"mydb");
+        $sql="CREATE TABLE Persons(FirstName varchar(15),LastName varchar(15), Age int);";
+
+        //EXECUTE QUERY
+        mysqli_query($conn,$sql);
+        
+        echo "Table is created successfully";
+    }
+
+    mysqli_close($conn);
+
+?>
+
+
+
+# example 2.18
+
+
+
+
+<?php
+    $user = "username";
+    $pass = "password";
+    $host = "host";
+    $dbdb = "database";
+    
+$conn = new mysqli($host, $user, $pass, $dbdb);
+   if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+?>
+
+
+
+
+# example 2.19
+
+
+extension=php_mysqli.dll
+
+
+
+
+
+; Directory in which the loadable extensions (modules) reside.
+; http://php.net/extension-dir
+; extension_dir = "./"
+; On windows:
+; extension_dir = "ext"
+
+extension_dir = "ext"
+
+;extension=php_gmp.dll
+;extension=php_intl.dll
+;extension=php_imap.dll
+;extension=php_interbase.dll
+;extension=php_ldap.dll
+;extension=php_mbstring.dll
+;extension=php_exif.dll      ; Must be after mbstring as it depends on it
+
+extension=php_mysqli.dll
+
+;extension=php_oci8_12c.dll  ; Use with Oracle Database 12c Instant Client
+;extension=php_openssl.dll
+
+
+
+
+
+
+
+
+# example 2.20
+
+
+
+
+
+
+echo phpinfo();
+
+
+
+
+
+
+<?php
+
+    $conn=mysqli_connect("localhost","root","");
+    if(!$conn){
+        die("Couldn't connect to database");
+    }
+    else{
+        echo "Connecting to database";
+        if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS mydb")){
+            echo "Database created successfully";
+        }else{
+            echo "Database not created successfully";
+        }
+    }
+
+    mysqli_close($conn);
+
+?>
+
+
+
+
+# example 2.20
+
+<?php
+
+    $conn=mysqli_connect("localhost","root","");
+    if(!$conn){
+        die("Couldn't connect to database");
+    }
+    else{
+        echo "Connecting to database";
+    }
+
+    mysqli_close($conn);
+
+?>
+
+
+
+
+# example 2.21
+
+<?php
+function ascendingOrder($arr){
+
+    sort($arr);
+    print_r($arr);
+
+}
+
+?>
+
+
+
+
+
+
+# example 2.22 
+
+<?php
+
+require __DIR__ . './AscendingOrder.php';
+
+$values=array(56,76,45,65,76,87,44,3,54,12,5);
+
+
+do{ 
+
+    echo "a] Asc\n
+    b] Desc\n
+    c] Reverse\n
+    d] Find even nos\n
+    e] Find odd nos\n
+    f] sum of all elements\n
+    \n";
+    $choice=readline("Enter your choice\n");
+    switch($choice){
+        case 1:
+            ascendingOrder($values);
+            break;
+       
+    
+        default :
+            echo "\nInvalid choice\n\n";
+    }
+    echo "\nDo you want to continue\n";
+    }while(fgetc(STDIN)!='n');
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+# example 2.23
+
+
+>1] Create an associative array to declare months and its number of days in that month
+
+2] Declare number array and pass to an function to print in asc order
+
+
+a] Asc
+b] Desc
+c] Reverse
+d] Find even nos
+e] Find odd nos
+f] sum of all elements
+
+
+
+
+
+
+
+
+# example 2.24
+
+
+
+<?php
+
+    function averageMarks($arr){
+        $total=0;
+        foreach($arr as $values){
+            $total+=$values;
+        }
+
+        return $total/count($arr);
+
+    }
+
+    $marks=array(56,76,45,65,76,87,44);
+
+
+    echo "Average of marks is ".averageMarks($marks);
+
+
+
+?>
+
+
+
+
+
+# example 2.25
+    // $friends = array("Tanish","Anish","Manish","Danish","Kanish");
+
+    // //1 Array method
+    // echo count($friends);
+
+    //2 Array method Array_walk() method
+
+    // function showValues($val,$k){
+    //     echo $k. " value is".$val."\n";
+    // }
+
+    // $my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>"FIVE");
+    // array_walk($my_collections,"showValues");
+
+
+
+    $friends = array("Tanish","Anish","Manish","Danish","Kanish");
+    // $val=readline("Enter the value to search in array");
+    // if(in_array($val,$friends)){
+    //     echo "Value is present in array";
+    // }
+    // else{
+    //     echo "Value is not present in array";
+    // }
+        
+
+    array_push($friends,"Amisha","Sania","Aravind","Kunal");
+
+    // print_r($friends);
+
+
+    // echo array_shift($friends);
+    // print_r($friends);
+
+    // array_unshift($friends,"Rupesh");
+    // print_r($friends);
+
+
+    print_r(array_reverse($friends));
+
+
+        
+
+    # example 2.26    
+        
+        
+        
+
+array_push($friends,"Amisha","Sania","Aravind","Kunal");
+
+    print_r($friends);
+
+
+    echo array_shift($friends);
+    print_r($friends);
+
+    array_unshift($friends,"Rupesh");
+    print_r($friends);
+
+
+    
+    # example 2.27
+    
+
+
+$friends = array("Tanish","Anish","Manish","Danish","Kanish");
+    $val=readline("Enter the value to search in array");
+    if(in_array($val,$friends)){
+        echo "Value is present in array";
+    }
+    else{
+        echo "Value is not present in array";
+    }
+    
+    
+    
+    
+ # example 2.27   
+
+
+// $friends = array("Tanish","Anish","Manish","Danish","Kanish");
+
+    // //1 Array method
+    // echo count($friends);
+
+    //2 Array method Array_walk() method
+
+    function showValues($val,$k){
+        echo $k. " value is".$val."\n";
+    }
+
+    $my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>"FIVE");
+    array_walk($my_collections,"showValues");
+
+    
+    
+    
+    
+    
+ # example 2.28   
+    
+    
+    
+
+
+$employee_records = array(
+        array("empId"=>"101","name"=>"Tanish","salary"=>"100000"),
+        array("empId"=>"102","name"=>"Anish","salary"=>"200000"),
+        array("empId"=>"103","name"=>"Manish","salary"=>"300000"),
+        array("empId"=>"104","name"=>"Vanish","salary"=>"400000"),
+        array("empId"=>"105","name"=>"Kanish","salary"=>"500000"),
+    );
+
+
+    // print_r($employee_records[0]["name"]);
+    $keys=array_keys($employee_records);
+    for($i=0;$i<count($employee_records);$i++){
+        // echo $keys[$i];
+        foreach($employee_records[$keys[$i]] as $key=>$value){
+            echo $key."=".$value." ";
+        }
+        echo "\n";
+    }
+
+    
+   # example 2.29 
+    
+    
+    
+    
+
+
+$employee_records = array(
+        array("empId"=>"101","name"=>"Tanish","salary"=>"100000"),
+        array("empId"=>"102","name"=>"Anish","salary"=>"200000"),
+        array("empId"=>"103","name"=>"Manish","salary"=>"300000"),
+        array("empId"=>"104","name"=>"Vanish","salary"=>"400000"),
+        array("empId"=>"105","name"=>"Kanish","salary"=>"500000"),
+    );
+
+
+    print_r($employee_records[0]["name"]);
+
+
+
+    
+    
+    
+    
+    # example 2.30
+    
+
+
+$my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>"FIVE");
+
+    echo $my_collections["1"]."\n";
+
+
+    foreach($my_collections as $values=>$val_values){
+        echo "Key is " . $values." Value is " . $val_values."\n";
+    }
+
+    $keys=array_keys($my_collections);
+    print_r($keys);
+    for($i=1;$i<(count($my_collections));++$i) {
+        echo "Key is " . $keys[$i]." Value is " . $my_collections[$keys[$i]]."\n";
+    }
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+# example 2.31
+
+
+
+$my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>"FIVE");
+
+    echo $my_collections["1"]."\n";
+
+
+    foreach($my_collections as $values=>$val_values){
+        echo "Key is " . $values." Value is " . $val_values."\n";
+    }
+    
+    
+    
+    
+    
+
+
+$my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>"FIVE");
+
+    echo $my_collections["1"];
+    
+    
+   # example 2.32 
+    
+
+<?php
+
+    $values=array("C++","JAVA","PHP","SQL","SQL Server","Perl");
+
+    //First way to print values
+    print_r($values);
+
+    //second way to print values
+
+    foreach($values as $val){
+        echo $val."\n";
+    }
+
+    //Third way to print values
+
+    for($n=0;$n<count($values);$n++){
+        echo $values[$n]." ";
+    }
+
+?>
+
+
+
+
+
+# example 2.33
+
+
+>The include() function
+This function is used to copy all the contents of a file called within the function, text wise into a file from which it is called. This happens before the server executes the code
+The require() function
+The require() function performs same as the include() function. It also takes the file that is required and copies the whole code into the file from where the require() function is called. 
+
+The only difference is — the include() statement will only generate a PHP warning but allow script execution to continue if the file to be included can't be found, whereas the require() statement will generate a fatal error and stops the script execution.
+	  
         
         
