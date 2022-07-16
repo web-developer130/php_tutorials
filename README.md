@@ -740,54 +740,54 @@ do{
     //     $i++; <br>
     // } <br>
 
-    //do while loop example
-    $i=1;
-    do{
-        echo "Value is ".$i."\n";
-        $i++;
-    }while($i<=10);
+    //do while loop example <br>
+    $i=1; <br>
+    do{ <br>
+        echo "Value is ".$i."\n"; <br>
+        $i++; <br>
+    }while($i<=10); <br>
     
     
-    //For loop example
-    for($i=1;$i<=10;$i++){
-        echo "Value is ".$i."\n";
-    }
+    //For loop example <br>
+    for($i=1;$i<=10;$i++){ <br>
+        echo "Value is ".$i."\n"; <br>
+    } <br>
 
-       $values=array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
-    foreach($values as $temp){
-        echo $temp."\n";
-    }
-?>
+       $values=array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"); <br>
+    foreach($values as $temp){ <br>
+        echo $temp."\n"; <br>
+    } <br> <br>
+?> <br>
+ 
 
-
-# examples
-
-
+# examples n-6
 
 
 
-    $num1=(int)readline("Enter first number\n");
-    $num2=(int)readline("Enter Second number\n");
 
-    echo "\n1] Addition\n2] Subtraction\n3] Multiplication\n4] Division\n\nEnter your choice\n";
-    $choice=(int)readline("Enter your choice\n");
 
-    switch ($choice){
+    $num1=(int)readline("Enter first number\n"); <br>
+    $num2=(int)readline("Enter Second number\n"); <br>
 
-        case 1:
-            echo "Addition of two number ".($num1+$num2) . "\n";
-            break;
-        case 2:
-            echo "Subraction of two number ".($num1-$num2) . "\n";
-            break;
-        case 3:
-            echo "Multiplication of two number ".($num1*$num2) . "\n";
-            break;
-        case 4:
-            echo "Division of two number ".(float)($num1/$num2) . "\n";
-            break;
-        default:
-            echo "Invalied Choice";
+    echo "\n1] Addition\n2] Subtraction\n3] Multiplication\n4] Division\n\nEnter your choice\n"; <br>
+    $choice=(int)readline("Enter your choice\n"); <br>
+
+    switch ($choice){ <br>
+
+        case 1: <br>
+            echo "Addition of two number ".($num1+$num2) . "\n"; <br>
+            break; <br>
+        case 2: <br>
+            echo "Subraction of two number ".($num1-$num2) . "\n"; <br>
+            break; <br>
+        case 3: <br>
+            echo "Multiplication of two number ".($num1*$num2) . "\n"; <br>
+            break; <br>
+        case 4: <br>
+            echo "Division of two number ".(float)($num1/$num2) . "\n"; <br>
+            break; <br>
+        default: <br>
+            echo "Invalied Choice"; <br>
             
                                                 
     }
@@ -797,26 +797,26 @@ do{
     
     
     
- # examples
+ # examples n-5
 
 
 <?php
-    $technology=readline("Enter a technology");
-    switch($technology){
-        case "c++":
-            echo "I would like to work with C++";
-            break;
-        case "java":
-            echo "I would like to work with java";
-            break;
-       case "php":
-            echo "I would like to work with php";
-            break;
-        case "angular":
-            echo "I would like to work with Angular";
-            break;
-        default:
-            echo "No Choice for input";
+    $technology=readline("Enter a technology"); <br>
+    switch($technology){ <br>
+        case "c++": <br>
+            echo "I would like to work with C++"; <br>
+            break; <br>
+        case "java": <br>
+            echo "I would like to work with java"; <br>
+            break; <br>
+       case "php": <br>
+            echo "I would like to work with php"; <br>
+            break; <br>
+        case "angular": <br>
+            echo "I would like to work with Angular"; <br>
+            break; <br>
+        default: <br>
+            echo "No Choice for input"; <br>
 
                                 
 
@@ -826,36 +826,36 @@ do{
 
 
 
-# examples
+# examples n-4
 
 
 
-<?php
-    $num=(int)readline("Enter a numbers");
-    switch($num){
-        case 1:
-            echo "Number 1";
-            break;
-        case 2:
-            echo "Number 2";
-            break;
-       case 3:
-            echo "Number 3";
-            break;
-        case 4:
-            echo "Number 4";
-            break;
-        default:
-            echo "No Choice for number";
+/*<?php
+    $num=(int)readline("Enter a numbers");<br>
+    switch($num){ <br>
+        case 1: <br>
+            echo "Number 1"; <br>
+            break; <br>
+        case 2: <br>
+            echo "Number 2"; <br>
+            break; <br>
+       case 3: <br>
+            echo "Number 3"; <br>
+            break; <br>
+        case 4: <br>
+            echo "Number 4"; <br>
+            break; <br>
+        default: <br>
+            echo "No Choice for number"; <br>
 
                                 
 
-    }
+    } <br>
 
-?>
+?> */ <br>
 
 
-# examples
+# examples n-3
 
 
 1] Accept a number and print like  <br>
@@ -875,7 +875,7 @@ do{
 
 
 
-# examples
+# examples n-2
 
 
 <?php
@@ -927,7 +927,7 @@ do{
 ?>
 
 
-# examples
+# examples n-1
 
 
 <?php <br>
@@ -956,7 +956,7 @@ do{
 
 
 
-
+# examples 1.n
 
 
 
