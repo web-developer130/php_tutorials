@@ -211,11 +211,10 @@ else{ <br>
 	  
 	  
 # example 7
-
-<h1>FOOTER PAGE</h1>
-</main>
-    
-</body>
+//<html>
+//<h1>FOOTER PAGE</h1>
+   //</main>
+  //  </body>
 </html>
 
 
