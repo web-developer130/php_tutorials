@@ -2267,11 +2267,11 @@ $my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>
    # example 2.32 
     
 
-<?php
+//apply php open closed tage <br><br>
 
     $values=array("C++","JAVA","PHP","SQL","SQL Server","Perl");
 
-    //First way to print values
+    //First way to print values<br><br>
     print_r($values);
 
     //second way to print values
@@ -2280,13 +2280,12 @@ $my_collections = array("1"=>"ONE", "2"=>"TWO", "3"=>"THREE", "4"=>"FOUR", "5"=>
         echo $val."\n";
     }
 
-    //Third way to print values
+    //Third way to print values<br><br>
 
     for($n=0;$n<count($values);$n++){
         echo $values[$n]." ";
     }
 
-?>
 
 
 
