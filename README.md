@@ -649,22 +649,22 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
     // echo shell_exec('dir'); <br>
     //OR <br>
-    exec('dir',$commands); 
-    print_r($commands);
+    exec('dir',$commands);  <br>
+    print_r($commands); <br>
     
     
     
     
 # examples
 
-echo php_uname();
-    $cmd='set';
-    if(substr(php_uname(),0,7)=="Windows"){
+echo php_uname(); <br>
+    $cmd='set'; <br>
+    if(substr(php_uname(),0,7)=="Windows"){ <br>
         // pclose(popen("start /B".$cmd,"r")); <br>
         // exec('c:\WINDOWS\system32\cmd.exe'); <br>
         // echo `dir`; <br>
         
-        echo "<pre>".shell_exec($cmd)."</pre>";
+        echo "<pre>".shell_exec($cmd)."</pre>"; <br>
     }
     
     
@@ -675,12 +675,12 @@ echo php_uname();
     
 # examples
 
-echo php_uname();
-    if(substr(php_uname(),0,7)=="Windows"){
+echo php_uname(); <br>
+    if(substr(php_uname(),0,7)=="Windows"){ <br>
         // pclose(popen("start /B".$cmd,"r")); <br>
         // exec('c:\WINDOWS\system32\cmd.exe'); <br>
-        echo `dir`;
-    }
+        echo `dir`; <br>
+    } <br>
     
     
     
@@ -688,12 +688,12 @@ echo php_uname();
     
  # examples   
 
-$commands=null;
-    $retval=null;
-    exec("dir",$commands,$retval);
+$commands=null; <br>
+    $retval=null; <br>
+    exec("dir",$commands,$retval); <br>
     // echo $commands[0]; <br>
-    print_r($commands);
-    echo("RETURN VALUE ".$retval);
+    print_r($commands); <br>
+    echo("RETURN VALUE ".$retval); <br>
     
     
     
@@ -703,23 +703,23 @@ $commands=null;
     
 
 
-do{
+do{ <br>
 
-        echo "1] Smile\n2] Expression\n3] Sadness\n4] Joy\nEnter your choice\n";
-        $choice=(int)readline("Enter your choice");
-        switch($choice){
-            case 1:
-                echo "Smile please";
-                break;
-            default: 
-                echo "Invalid choice";
+        echo "1] Smile\n2] Expression\n3] Sadness\n4] Joy\nEnter your choice\n"; <br>
+        $choice=(int)readline("Enter your choice"); <br>
+        switch($choice){ <br>
+            case 1: <br>
+                echo "Smile please"; <br>
+                break; <br>
+            default:  <br>
+                echo "Invalid choice"; <br>
 
         }
 
-        echo "Do you want to continue?";
-        $input=fgetc(STDIN);
-        echo $input;
-    }while($input=='y' || $input=='Y');
+        echo "Do you want to continue?"; <br>
+        $input=fgetc(STDIN); <br>
+        echo $input; <br>
+    }while($input=='y' || $input=='Y'); <br>
 
 
     
@@ -907,24 +907,24 @@ do{
     $age=(int)readline("\nEnter your age"); <br>
     $marks=(int)readline("\nEnter your marks"); <br>
 
-    if($marks<33)
-        echo "\nFail";
-    else if ($marks>=33 && $marks<50)
-        echo "\n D Grade";
-    else if ($marks>=50 && $marks<65)
-        echo "\n C Grade";
-    else if ($marks>=65 && $marks<80)
-        echo "\n B Grade";
-    else if ($marks>=80 && $marks<90)
-        echo "\n A Grade";
-    else if ($marks>=90)
-        echo "\n A+ Grade";
-    else
-        echo "Invalied input";
+    if($marks<33) <br>
+        echo "\nFail"; <br>
+    else if ($marks>=33 && $marks<50) <br>
+        echo "\n D Grade"; <br>
+    else if ($marks>=50 && $marks<65) <br>
+        echo "\n C Grade"; <br>
+    else if ($marks>=65 && $marks<80) <br>
+        echo "\n B Grade"; <br>
+    else if ($marks>=80 && $marks<90) <br>
+        echo "\n A Grade"; <br>
+    else if ($marks>=90) <br>
+        echo "\n A+ Grade"; <br>
+    else <br>
+        echo "Invalied input"; <br>
 
 
 
-?>
+?> <br>
 
 
 # examples n-1
