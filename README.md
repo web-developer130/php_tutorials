@@ -93,12 +93,12 @@ print is slower than echo statement.<br>
 
 
 # examples
-
+#           example 1.0 
 /*<?php <br>
 
-	 $val1=(int)readline("Enter an integer value"); <br>
-	$val2=(float)readline("Enter float value"); <br>
-        echo "Values are $val1 $val2"; <br>
+	 $val1=(int)readline("Enter an integer value"); 
+	$val2=(float)readline("Enter float value"); 
+        echo "Values are $val1 $val2"; 
 	
 	$val1=(int)readline("Enter first value");
 	$val2=(int)readline("Enter second value");
@@ -107,3 +107,875 @@ print is slower than echo statement.<br>
 	echo "Sum of".$val1." And ".$val2." is ".($val1+$val2); 
 ?>*/
 
+#         example 2.0
+
+/*<?php
+	 $val1=(int)readline("Enter an integer value");
+          $val2=(float)readline("Enter float value");
+	echo "Values are $val1 $val2";
+
+	$val1=(int)readline("Enter first value");
+	$val2=(int)readline("Enter second value");
+
+	echo "Sum of two number ".($val1+$val2);
+	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2);
+
+	//Another method to accept value from user <br>
+	echo "\nEnter two more numbers\n";
+	fscanf(STDIN,"%d %d",$val1,$val2);
+	echo "\nSum of".$val1." And ".$val2." is ".($val1+$val2);
+
+?>*/
+ ** example 3 **
+/*<?php
+
+if(isset($_POST['name'],$_POST['email'])){
+    $name=htmlspecialchars($_POST['name']);
+    $email=htmlspecialchars($_POST['email']);
+
+    echo "Thank you user $name";
+    echo "Your email id is  $email";
+}
+else{
+    echo "You need to provide details";
+}
+
+?>*/
+
+
+
+
+** example 4 **
+
+
+<form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" required="required" placeholder="Enter Your name"/>
+            </div>
+            <div>
+                <label for="name">Email:</label>
+                <input type="email" name="email" required="required" placeholder="Enter Email id"/>
+            </div>
+            <button type="submit">SUBMIT</button>
+  
+        
+            </form>
+        
+        
+        
+        
+        
+** example 5 **
+
+<?php
+    require __DIR__ . './Header.php';
+
+    $request_mathod=strtoupper($_SERVER['REQUEST_METHOD']);
+    echo $request_mathod;
+
+    if($request_mathod=='GET'){
+        require __DIR__ . './get.php';
+    }
+    else{
+        require __DIR__ . './post.php';
+    }
+
+    echo "Main part of index.php";
+
+
+    require __DIR__ . './Footer.php';
+
+?>
+
+
+
+
+
+
+** example 6 **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>HEADER File</h1>
+    
+    
+
+
+
+
+
+
+** example 7 **
+
+<h1>FOOTER PAGE</h1>
+</main>
+    
+</body>
+</html>
+
+
+
+
+**********************************
+
+
+** example 8 **
+
+<?php
+    require __DIR__ . './Header.php';
+
+
+    echo "Main part of index.php";
+
+    
+    require __DIR__ . './Footer.php';
+
+?>
+
+
+
+
+
+
+
+
+
+<h1>FOOTER PAGE</h1>
+</main>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <main>
+    <h1>HEADER File</h1>
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>Document</title>
+</head>
+<body>
+    <main>
+        <?php if($_SERVER['REQUEST_METHOD'] == 'GET'):?>
+
+            <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
+
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" required="required" placeholder="Enter Your name"/>
+            </div>
+
+            <div>
+                <label for="name">Email:</label>
+                <input type="email" name="email" required="required" placeholder="Enter Email id"/>
+            </div>
+
+            <button type="submit">SUBMIT</button>
+            
+        
+            </form>
+
+
+        <?php else : ?>
+            <?php
+
+                if(isset($_POST['name'],$_POST['email'])){
+                    $name=htmlspecialchars($_POST['name']);
+                    $email=htmlspecialchars($_POST['email']);
+
+                    echo "Thank you user $name";
+                    echo "Your email id is  $email";
+                }
+                else{
+                    echo "You need to provide details";
+                }
+
+            ?>
+
+        <?php endif; ?>
+
+    </main>
+    
+</body>
+</html>
+
+
+
+** description **
+
+1] Accept a number and print like <br>
+   4567 <br>
+   
+   display sum of digits along with format specified below<br>
+
+    4000 + 500 + 60 + 7  = 4567<br>
+    Sum of digits = 22<br>
+
+    use simple / % and without using loop <br>
+
+
+2] Accept a number and print in reverse without using loop <br>
+     
+3] Accept three number and check the greate number from three numbers<br>
+
+
+4] Accept a number of terms and print fibonacci series <br>
+   0 1 1 2 3 5 8 13....<br>
+
+5] Accept a string and print the characters <br>
+
+6] write a program to create a directory with name mydir also create a text file <br>
+   
+7] Write a program to print even numbers and odd numbers <br>
+
+8] Write a program to find factorial number <br>
+
+9] Accept a string and print each character in asc order <br>
+
+10] Accept two number and swap without using third variable using function and passby reference <br>
+
+11] Write a program to calculate area of circle , area of rectangle, area of peripheral using function ans switch <br>
+
+12] Accept student details using html form like <br>
+    name,age,dob,sub1 marks,sub2 marks, sub3 marks, <br>
+
+    calculate total and average along with student details in ta <br>
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+** description **    
+
+Welcome User 
+<?php 
+    echo $_POST['fname']; 
+?><br>
+AGE <?php echo $_POST['age']; ?><br>
+
+
+
+
+
+
+
+** description **
+	  
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="details.php" method="post">
+
+        Name : <input name="fname" type="text" />
+        <br> Age: <input name="age" type="text" />
+
+        <input type="submit" value="SUBMIT">
+
+    </form>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+** description **
+	  
+A constant is a name or an identifier for a fixed value. Constant are like variables, except that once they are defined, they cannot be undefined or changed
+
+/*<?php
+// Defining constant <br>
+define("SITE_URL", "https://www.google.com/");
+ 
+// Using constant <br>
+echo 'Thank you for visiting - ' . SITE_URL;
+?>
+
+
+
+
+
+
+
+** description **
+<?php
+
+    function addition(){
+        echo "Enter two numbers\n";
+        $num1=(int)readline("Enter first number");
+        $num2=(int)readline("Enter second number");
+        
+        echo "Addition of two numbers is ".($num1+$num2);
+    }
+
+    function division($val1,$val2){
+        return (float)$val1/$val2;
+    }
+
+
+    function multiplication(){
+        echo "Enter two numbers\n";
+        $num1=(int)readline("Enter first number");
+        $num2=(int)readline("Enter second number");
+
+        return $num1*$num2;
+    }
+   
+    function subtraction($val1,$val2){
+        echo "Subtraction of two numbers is ".($val1+$val2);
+    }
+    do{ 
+
+        echo "1] Addition\n2] Subtraction\n3] Multiplication\n4] Division\n";
+        $choice=readline("Enter your choice\n");
+        switch($choice){
+            case 1:
+                addition();
+                break;
+            case 2:
+                echo "Enter two numbers\n";
+                $num1=(int)readline("Enter first number");
+                $num2=(int)readline("Enter second number");
+                
+                subtraction($num1,$num2);
+                break;
+
+            case 3:
+                echo "Multiplication is ".multiplication();
+                break;
+
+            case 4:
+                echo "Enter two numbers\n";
+                $num1=(int)readline("Enter first number");
+                $num2=(int)readline("Enter second number");
+
+                echo "Division is ".division($num1,$num2);
+
+            default :
+                echo "\nInvalid choice\n\n";
+        }
+        echo "\nDo you want to continue\n";
+    }while(fgetc(STDIN)!='n');
+
+
+?>
+
+
+
+
+
+
+
+
+<?php
+    //Function 1
+    function sayHello(){
+        echo "Hello from sayHello method";
+    }
+    sayHello();
+
+    //Function 2
+    function sumOfValues($val1, $val2){
+        echo "\n\nSum is ".($val1+$val2);
+    }
+    sumOfValues(10,20);
+
+    //function 3
+    function getValue(){
+        return 100;
+    }
+
+    echo "\nThe returned value is ".getValue();
+
+    //function 4
+
+    function addition($val1, $val2){
+        return $val1+$val2;
+    }
+
+    echo "\nThe addition is  ".addition(44,45);
+    
+
+
+    
+    //call by reference
+
+    function changeValue(&$str2){
+        $str2="Good night";
+    }
+
+    $str="Good morning";
+    echo "\nBefore passing value is".$str;
+    changeValue($str);
+    echo "\nAfter passing value is".$str;
+
+    
+    
+    
+    
+
+?>
+
+
+
+
+
+
+
+
+1] Accept a number and print like 
+   4567 
+   
+   display sum of digits along with format specified below
+
+    4000 + 500 + 60 + 7  = 4567
+    Sum of digits = 22
+
+    use simple / % and without using loop 
+
+
+2] Accept a number and print in reverse without using loop 
+     
+3] Accept three number and check the greate number from three numbers
+
+
+4] Accept a number of terms and print fibonacci series 
+   0 1 1 2 3 5 8 13....
+
+5] Accept a string and print the characters 
+
+6] write a program to create a directory with name mydir also create a text file 
+   
+7] Write a program to print even numbers and odd numbers
+
+8] Write a program to find factorial number
+
+9] Accept a string and print each character in asc order
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  for($i = 0; $i <=5;$i++){
+        for($j = 0; $j<=$i;$j++){
+            echo "$";
+        }
+        echo "\n";
+    }
+
+    // for($i = 0; $i <10;$i++) {
+    //     $product=10*$i;
+    //     echo "The product 10 * $i is $product \n";
+    // }
+
+    
+    
+    
+    
+    
+    
+
+
+
+    // echo shell_exec('dir');
+    //OR
+    exec('dir',$commands);
+    print_r($commands);
+    
+    
+    
+    
+    
+
+echo php_uname();
+    $cmd='set';
+    if(substr(php_uname(),0,7)=="Windows"){
+        // pclose(popen("start /B".$cmd,"r"));
+        // exec('c:\WINDOWS\system32\cmd.exe');
+        // echo `dir`;
+        
+        echo "<pre>".shell_exec($cmd)."</pre>";
+    }
+    
+    
+    
+    
+    
+    
+    
+
+
+echo php_uname();
+    if(substr(php_uname(),0,7)=="Windows"){
+        // pclose(popen("start /B".$cmd,"r"));
+        // exec('c:\WINDOWS\system32\cmd.exe');
+        echo `dir`;
+    }
+    
+    
+    
+    
+    
+    
+
+$commands=null;
+    $retval=null;
+    exec("dir",$commands,$retval);
+    // echo $commands[0];
+    print_r($commands);
+    echo("RETURN VALUE ".$retval);
+    
+    
+    
+    
+    
+    
+    
+
+
+do{
+
+        echo "1] Smile\n2] Expression\n3] Sadness\n4] Joy\nEnter your choice\n";
+        $choice=(int)readline("Enter your choice");
+        switch($choice){
+            case 1:
+                echo "Smile please";
+                break;
+            default: 
+                echo "Invalid choice";
+
+        }
+
+        echo "Do you want to continue?";
+        $input=fgetc(STDIN);
+        echo $input;
+    }while($input=='y' || $input=='Y');
+
+
+    
+    
+    
+    
+    
+    
+
+
+<?php
+
+    //while loop example
+
+    // $i=1;
+    // while($i<=10){
+    //     echo "\nValue is".$i."\n";
+    //     $i++;
+    // }
+
+    //do while loop example
+    $i=1;
+    do{
+        echo "Value is ".$i."\n";
+        $i++;
+    }while($i<=10);
+    
+    
+    //For loop example
+    for($i=1;$i<=10;$i++){
+        echo "Value is ".$i."\n";
+    }
+
+       $values=array("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
+    foreach($values as $temp){
+        echo $temp."\n";
+    }
+?>
+
+
+
+
+
+
+
+
+    $num1=(int)readline("Enter first number\n");
+    $num2=(int)readline("Enter Second number\n");
+
+    echo "\n1] Addition\n2] Subtraction\n3] Multiplication\n4] Division\n\nEnter your choice\n";
+    $choice=(int)readline("Enter your choice\n");
+
+    switch ($choice){
+
+        case 1:
+            echo "Addition of two number ".($num1+$num2) . "\n";
+            break;
+        case 2:
+            echo "Subraction of two number ".($num1-$num2) . "\n";
+            break;
+        case 3:
+            echo "Multiplication of two number ".($num1*$num2) . "\n";
+            break;
+        case 4:
+            echo "Division of two number ".(float)($num1/$num2) . "\n";
+            break;
+        default:
+            echo "Invalied Choice";
+            
+                                                
+    }
+    
+    
+    
+    
+    
+    
+    
+
+
+<?php
+    $technology=readline("Enter a technology");
+    switch($technology){
+        case "c++":
+            echo "I would like to work with C++";
+            break;
+        case "java":
+            echo "I would like to work with java";
+            break;
+       case "php":
+            echo "I would like to work with php";
+            break;
+        case "angular":
+            echo "I would like to work with Angular";
+            break;
+        default:
+            echo "No Choice for input";
+
+                                
+
+    }
+
+?>
+
+
+
+
+
+
+
+<?php
+    $num=(int)readline("Enter a numbers");
+    switch($num){
+        case 1:
+            echo "Number 1";
+            break;
+        case 2:
+            echo "Number 2";
+            break;
+       case 3:
+            echo "Number 3";
+            break;
+        case 4:
+            echo "Number 4";
+            break;
+        default:
+            echo "No Choice for number";
+
+                                
+
+    }
+
+?>
+
+
+
+
+
+1] Accept a number and print like 
+   4567 
+   
+   display sum of digits along with format specified below
+
+    4000 + 500 + 60 + 7  = 4567
+    Sum of digits = 22
+
+    use simple / % and without using loop 
+
+
+2] Accept a number and print in reverse without using loop 
+     
+3] Accept three number and check the greate number from three numbers
+
+
+
+
+
+
+<?php
+    //If conditional statement
+    $d=date('D');
+    echo $d;
+
+    if($d=='Fri') 
+        echo "Lets have party tonight\n";
+    else 
+        echo "Lets go back to work\n";
+
+
+    //Netsted if else
+
+    $a=10;
+    $b=20;
+    if($a>$b)
+        echo "\n".$a." is greater than ".$b;
+    elseif($a<$b)
+        echo "\n".$a." is smaller than ".$b;
+    else
+        echo "\nBoth are equal.";
+
+
+    //Sample student information
+
+    $name=readline("\nEnter your name");
+    $age=(int)readline("\nEnter your age");
+    $marks=(int)readline("\nEnter your marks");
+
+    if($marks<33)
+        echo "\nFail";
+    else if ($marks>=33 && $marks<50)
+        echo "\n D Grade";
+    else if ($marks>=50 && $marks<65)
+        echo "\n C Grade";
+    else if ($marks>=65 && $marks<80)
+        echo "\n B Grade";
+    else if ($marks>=80 && $marks<90)
+        echo "\n A Grade";
+    else if ($marks>=90)
+        echo "\n A+ Grade";
+    else
+        echo "Invalied input";
+
+
+
+?>
+
+
+
+
+
+<?php
+    //If conditional statement
+    $d=date('D');
+    echo $d;
+
+    if($d=='Fri') 
+        echo "Lets have party tonight\n";
+    else 
+        echo "Lets go back to work\n";
+
+
+    //Netsted if else
+
+    $a=10;
+    $b=20;
+    if($a>$b)
+        echo "\n".$a." is greater than ".$b;
+    elseif($a<$b)
+        echo "\n".$a." is smaller than ".$b;
+    else
+        echo "\nBoth are equal.";
+?>
+
+
+
+
+
+
+
+
+
+
+1] PHP server
+2] PHP Unterlephense
+3] settings
+    file.associations
+    *.module  value: php
+
+        
+        
+        
+        
