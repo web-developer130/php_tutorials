@@ -3,15 +3,15 @@
 # DAY 1 study Materials
 
 # intorduction 1.0
-1.PHP is server side scripting system <br>
-2.PHP stands for "PHP: Hypertext Preprocessor" <br>
-3.Syntax based on Perl, Java, and C <br>
-4.Very good for creating dynamic content <br>
-5.If you want to focus on one system for dynamic content, this is a good one to choose <br>
+> 1.PHP is server side scripting system <br>
+  2.PHP stands for "PHP: Hypertext Preprocessor" <br>
+  3.Syntax based on Perl, Java, and C <br>
+ 4.Very good for creating dynamic content <br>
+ 5.If you want to focus on one system for dynamic content, this is a good one to choose <br>
 
 # 1.1
 
-PHP is an open-source, interpreted, and object-oriented scripting language that can be executed at the server-side. PHP is well suited for web development. Therefore, it is used to develop web applications (an application that executes on the server and generates the dynamic page.).<br>
+> PHP is an open-source, interpreted, and object-oriented scripting language that can be executed at the server-side. PHP is well suited for web development. Therefore, it is used to develop web applications (an application that executes on the server and generates the dynamic page.).<br>
 PHP was created by Rasmus Lerdorf in 1994 but appeared in the market in 1995.<br>
 Some important points need to be noticed about PHP are as followed:<br>
 PHP stands for Hypertext Preprocessor.<br>
@@ -24,7 +24,7 @@ PHP is an open-source scripting language.<br>
 PHP is simple and easy to learn language.<br>
 
 # 1.2
-Started as a Perl hack in 1994 by Rasmus Lerdorf (to handle his resume), developed to PHP/FI 2.0<br> <br>
+> Started as a Perl hack in 1994 by Rasmus Lerdorf (to handle his resume), developed to PHP/FI 2.0<br> <br>
 
 By 1997 up to PHP 3.0 with a new parser engine by Zeev Suraski and Andi Gutmans
 <br> <br>
@@ -34,7 +34,7 @@ php is one of the premier examples of what an open source project can be<br> <br
 
 
 # 1.3
-PHP is a server-side scripting language, which is used to design the dynamic web applications with MySQL database. <br>
+> PHP is a server-side scripting language, which is used to design the dynamic web applications with MySQL database. <br>
 It handles dynamic content, database as well as session tracking for the website. <br>
 You can create sessions in PHP. <br>
 It can access cookies variable and also set cookies. <br>
@@ -46,11 +46,11 @@ PHP can handle the forms, such as - collect the data from users using forms, sav
 
 # 1.4
 
-XAMPP is an abbreviation where X stands for Cross-Platform, A stands for Apache, M stands for MYSQL, and the Ps stand for PHP and Perl, respectively. It is an open-source package of web solutions that includes Apache distribution for many servers and command-line executables along with modules such as Apache server, MariaDB, PHP, and Perl.<br>
+> XAMPP is an abbreviation where X stands for Cross-Platform, A stands for Apache, M stands for MYSQL, and the Ps stand for PHP and Perl, respectively. It is an open-source package of web solutions that includes Apache distribution for many servers and command-line executables along with modules such as Apache server, MariaDB, PHP, and Perl.<br>
 XAMPP helps a local host or server to test its website and clients via computers and laptops before releasing it to the main server. It is a platform that furnishes a suitable environment to test and verify the working of projects based on Apache, Perl, MySQL database, and PHP through the system of the host itself. Among these technologies, Perl is a programming language used for web development, PHP is a backend scripting language, and MariaDB is the most vividly used database developed by MySQL. The detailed description of these components is given below.<br>
 
 # 1.5
-As defined earlier, XAMPP is used to symbolize the classification of solutions for different technologies. It provides a base for testing of projects based on different technologies through a personal server. XAMPP is an abbreviated form of each alphabet representing each of its major components. This collection of software contains a web server named Apache, a database management system named MariaDB and scripting/ programming languages such as PHP and Perl. X denotes Cross-platform, which means that it can work on different platforms such as Windows, Linux, and macOS.<br>
+> As defined earlier, XAMPP is used to symbolize the classification of solutions for different technologies. It provides a base for testing of projects based on different technologies through a personal server. XAMPP is an abbreviated form of each alphabet representing each of its major components. This collection of software contains a web server named Apache, a database management system named MariaDB and scripting/ programming languages such as PHP and Perl. X denotes Cross-platform, which means that it can work on different platforms such as Windows, Linux, and macOS.<br>
 
 WAMP for Windows <br>
 LAMP for Linux<br>
