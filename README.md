@@ -1403,18 +1403,18 @@ function openCity(evt, cityName) {
 
 // apply php open close tags before run <br><br>
 
-$conn=mysqli_connect("localhost","root","");
-if(!$conn){
-    die("Couldn't connect to database");
-}
-else{
-    echo "Connecting to database";
-    if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS $_POST[create_database]")){
-        echo "Database created successfully";
-    }else{
-        echo "Database not created successfully";
-    }
-    }
+$conn=mysqli_connect("localhost","root","");<br><br>
+if(!$conn){<br><br>
+    die("Couldn't connect to database");<br><br>
+}<br><br>
+else{<br><br>
+    echo "Connecting to database";<br><br>
+    if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS $_POST[create_database]")){<br><br>
+        echo "Database created successfully";<br><br>
+    }else{<br><br>
+        echo "Database not created successfully";<br><br>
+    }<br><br>
+    }<br><br>
 
 
 
