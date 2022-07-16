@@ -1284,22 +1284,22 @@ function openCity(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
+  // Get all elements with class="tabcontent" and hide them<br><br>
   tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
+  for (i = 0; i < tabcontent.length; i++) {<br><br>
+    tabcontent[i].style.display = "none";<br><br>
+  }<br><br>
 
-  // Get all elements with class="tablinks" and remove the class "active"
+  // Get all elements with class="tablinks" and remove the class "active"<br><br>
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
-  }
+  }<br><br>
 
-  // Show the current tab, and add an "active" class to the button that opened the tab
+  // Show the current tab, and add an "active" class to the button that opened the tab<br><br>
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
-}
+}<br><br>
 
     </script>
     <style>
@@ -1307,7 +1307,7 @@ function openCity(evt, cityName) {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-}
+}<br><br>
 
 /* Style the buttons that are used to open the tab content */
 .tab button {
@@ -1318,17 +1318,17 @@ function openCity(evt, cityName) {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-}
+}<br><br>
 
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #ddd;
-}
+}<br><br>
 
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
-}
+}<br><br>
 
 /* Style the tab content */
 .tabcontent {
@@ -1336,8 +1336,8 @@ function openCity(evt, cityName) {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
-}
-
+}<br><br>
+<br><br>
         </style>
 </head>
 <body>
@@ -1459,22 +1459,22 @@ function openCity(evt, cityName) {
   // Declare all variables
   var i, tabcontent, tablinks;
 
-  // Get all elements with class="tabcontent" and hide them
+  // Get all elements with class="tabcontent" and hide them<br><br>
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
 
-  // Get all elements with class="tablinks" and remove the class "active"
+  // Get all elements with class="tablinks" and remove the class "active"<br><br>
   tablinks = document.getElementsByClassName("tablinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
 
-  // Show the current tab, and add an "active" class to the button that opened the tab
+  // Show the current tab, and add an "active" class to the button that opened the tab<br><br>
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
-}
+}<br><br>
 
     </script>
     <style>
@@ -1482,9 +1482,9 @@ function openCity(evt, cityName) {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
-}
+}<br><br>
 
-/* Style the buttons that are used to open the tab content */
+/* Style the buttons that are used to open the tab content */<br><br>
 .tab button {
   background-color: inherit;
   float: left;
@@ -1493,17 +1493,17 @@ function openCity(evt, cityName) {
   cursor: pointer;
   padding: 14px 16px;
   transition: 0.3s;
-}
+}<br><br>
 
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #ddd;
-}
+}<br><br>
 
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
-}
+}<br><br>
 
 /* Style the tab content */
 .tabcontent {
@@ -1511,7 +1511,7 @@ function openCity(evt, cityName) {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
-}
+}<br><br>
 
         </style>
 </head>
@@ -1575,15 +1575,15 @@ function openCity(evt, cityName) {
   var i, tabcontent, tablinks;
 
   // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
+  tabcontent = document.getElementsByClassName("tabcontent");<br><br>
+  for (i = 0; i < tabcontent.length; i++) {<br><br>
     tabcontent[i].style.display = "none";
   }
 
   // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  tablinks = document.getElementsByClassName("tablinks");<br><br>
+  for (i = 0; i < tablinks.length; i++) {<br><br>
+    tablinks[i].className = tablinks[i].className.replace(" active", "");<br><br>
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
@@ -1662,18 +1662,18 @@ function openCity(evt, cityName) {
 # example 2.13
 
 // apply php open close tags before run <br><br>
-    $conn=mysqli_connect("localhost","root","");
-    if(!$conn){
-        die("Couldn't connect to database");
-    }
-    mysqli_select_db($conn,"mydb");
+    $conn=mysqli_connect("localhost","root","");<br><br>
+    if(!$conn){<br><br>
+        die("Couldn't connect to database");<br><br>
+    }<br><br>
+    mysqli_select_db($conn,"mydb");<br><br>
 
     $result=mysqli_query($conn,"SELECT * FROM persons");
     // print_r($result);
 
     // while($row=mysqli_fetch_array($result)){
     //     echo $row['FirstName']." ".$row['LastName']." ".$row['Age']."\n";
-    // }
+    // }<
 
     echo "<table border='1'>
         <tr>
@@ -1772,21 +1772,21 @@ function openCity(evt, cityName) {
 
 
 // apply php open close tags before run <br><br>
-    // echo phpinfo();
-    $conn=mysqli_connect("localhost","root","");
-    if(!$conn){
-        die("Couldn't connect to database");
-    }
-    else{
-        echo "Connecting to database";
-        // if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS mydb")){
-        //     echo "Database created successfully";
-        // }else{
-        //     echo "Database not created successfully";
-        // }
+    // echo phpinfo();<br><br>
+    $conn=mysqli_connect("localhost","root","");<br><br>
+    if(!$conn){<br><br>
+        die("Couldn't connect to database");<br><br>
+    }<br><br>
+    else{<br><br>
+        echo "Connecting to database";<br><br>
+        // if(mysqli_query($conn,"CREATE DATABASE IF NOT EXISTS mydb")){<br><br>
+        //     echo "Database created successfully";<br><br>
+        // }else{<br><br>
+        //     echo "Database not created successfully";<br><br>
+        // }<br><br>
 
 
-        //CREATE TABLE inside any particular database
+        //CREATE TABLE inside any particular database<br><br>
 
         mysqli_select_db($conn,"mydb");
         $sql="CREATE TABLE Persons(FirstName varchar(15),LastName varchar(15), Age int);";
@@ -1828,26 +1828,26 @@ $conn = new mysqli($host, $user, $pass, $dbdb);
 extension=php_mysqli.dll<br><br>
 
 
-; Directory in which the loadable extensions (modules) reside.
-; http://php.net/extension-dir
-; extension_dir = "./"
-; On windows:
-; extension_dir = "ext"
+; Directory in which the loadable extensions (modules) reside. <br><br>
+; http://php.net/extension-dir <br><br>
+; extension_dir = "./"<br><br>
+; On windows:<br><br>
+; extension_dir = "ext"<br><br>
 
-extension_dir = "ext"
+extension_dir = "ext"<br><br>
 
-;extension=php_gmp.dll
-;extension=php_intl.dll
-;extension=php_imap.dll
-;extension=php_interbase.dll
-;extension=php_ldap.dll
-;extension=php_mbstring.dll
-;extension=php_exif.dll      ; Must be after mbstring as it depends on it
+;extension=php_gmp.dll <br><br>
+;extension=php_intl.dll <br><br>
+;extension=php_imap.dll <br><br>
+;extension=php_interbase.dll<br><br>
+;extension=php_ldap.dll<br><br>
+;extension=php_mbstring.dll <br><br>
+;extension=php_exif.dll    <br><br>  ; Must be after mbstring as it depends on it<br><br>
 
-extension=php_mysqli.dll
+extension=php_mysqli.dll<br><br>
 
-;extension=php_oci8_12c.dll  ; Use with Oracle Database 12c Instant Client
-;extension=php_openssl.dll
+;extension=php_oci8_12c.dll  ; Use with Oracle Database 12c Instant Client<br><br>
+;extension=php_openssl.dll<br><br>
 
 
 
