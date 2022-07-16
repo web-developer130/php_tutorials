@@ -378,62 +378,62 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
     function addition(){ <br>
         echo "Enter two numbers\n"; <br>
-        $num1=(int)readline("Enter first number");
-        $num2=(int)readline("Enter second number");
+        $num1=(int)readline("Enter first number");<br>
+        $num2=(int)readline("Enter second number");<br>
         
-        echo "Addition of two numbers is ".($num1+$num2);
+        echo "Addition of two numbers is ".($num1+$num2);<br>
     }
+<br>
+    function division($val1,$val2){<br><br>
+        return (float)$val1/$val2;<br><br>
+    }<br>
 
-    function division($val1,$val2){
-        return (float)$val1/$val2;
+
+    function multiplication(){<br><br>
+        echo "Enter two numbers\n";<br><br>
+        $num1=(int)readline("Enter first number");<br><br>
+        $num2=(int)readline("Enter second number");<br><br>
+
+        return $num1*$num2;<br><br>
     }
+   <br><br>
+    function subtraction($val1,$val2){<br><br>
+        echo "Subtraction of two numbers is ".($val1+$val2);<br><br>
+    }<br><br>
+    do{ <br><br>
 
-
-    function multiplication(){
-        echo "Enter two numbers\n";
-        $num1=(int)readline("Enter first number");
-        $num2=(int)readline("Enter second number");
-
-        return $num1*$num2;
-    }
-   
-    function subtraction($val1,$val2){
-        echo "Subtraction of two numbers is ".($val1+$val2);
-    }
-    do{ 
-
-        echo "1] Addition\n2] Subtraction\n3] Multiplication\n4] Division\n";
-        $choice=readline("Enter your choice\n");
-        switch($choice){
-            case 1:
-                addition();
-                break;
-            case 2:
-                echo "Enter two numbers\n";
-                $num1=(int)readline("Enter first number");
-                $num2=(int)readline("Enter second number");
+        echo "1] Addition\n2] Subtraction\n3] Multiplication\n4] Division\n";<br><br>
+        $choice=readline("Enter your choice\n");<br><br>
+        switch($choice){<br><br>
+            case 1:<br><br>
+                addition();<br><br>
+                break;<br><br>
+            case 2:<br><br>
+                echo "Enter two numbers\n";<br><br>
+                $num1=(int)readline("Enter first number");<br><br>
+                $num2=(int)readline("Enter second number");<br><br>
                 
-                subtraction($num1,$num2);
-                break;
+                subtraction($num1,$num2);<br><br>
+                break;<br><br>
 
-            case 3:
-                echo "Multiplication is ".multiplication();
-                break;
+            case 3:<br><br>
+                echo "Multiplication is ".multiplication();<br><br>
+                break;<br><br>
 
-            case 4:
-                echo "Enter two numbers\n";
-                $num1=(int)readline("Enter first number");
-                $num2=(int)readline("Enter second number");
+            case 4:<br><br>
+                echo "Enter two numbers\n";<br><br>
+                $num1=(int)readline("Enter first number");<br><br>
+                $num2=(int)readline("Enter second number");<br><br>
 
-                echo "Division is ".division($num1,$num2);
+                echo "Division is ".division($num1,$num2);<br><br>
 
-            default :
-                echo "\nInvalid choice\n\n";
+            default :<br><br>
+                echo "\nInvalid choice\n\n";<br><br>
         }
-        echo "\nDo you want to continue\n";
-    }while(fgetc(STDIN)!='n');
+        echo "\nDo you want to continue\n";<br><br>
+    }while(fgetc(STDIN)!='n');<br><br>
 
-
+<br><br>
 ?>
 
 
@@ -446,12 +446,12 @@ echo 'Thank you for visiting - ' . SITE_URL;
 <?php <br>
     //Function 1 <br>
     function sayHello(){ <br>
-        echo "Hello from sayHello method"; <br>
-    }
+        echo "Hello from sayHello method"; <br><br><br>
+    }<br><br>
     sayHello(); <br>
 
     //Function 2 <br>
-    function sumOfValues($val1, $val2){ <br>
+    function sumOfValues($val1, $val2){ <br><br><br>
         echo "\n\nSum is ".($val1+$val2); <br>
     }
     sumOfValues(10,20); <br>
@@ -461,13 +461,13 @@ echo 'Thank you for visiting - ' . SITE_URL;
         return 100; <br>
     }
 
-    echo "\nThe returned value is ".getValue(); <br>
+    echo "\nThe returned value is ".getValue(); <br><br><br>
 
     //function 4 <br>
-
+<br><br>
     function addition($val1, $val2){ <br>
-        return $val1+$val2; <br>
-    }
+        return $val1+$val2; <br><br><br>
+    }<br><br>
 
     echo "\nThe addition is  ".addition(44,45); <br>
     
@@ -478,13 +478,13 @@ echo 'Thank you for visiting - ' . SITE_URL;
 
     function changeValue(&$str2){ <br>
         $str2="Good night"; <br>
-    }
+    }<br><br>
 
     $str="Good morning"; <br>
     echo "\nBefore passing value is".$str; <br>
-    changeValue($str); <br>
+    changeValue($str); <br><br><br>
     echo "\nAfter passing value is".$str; <br>
-
+<br><br>
     
     
     
