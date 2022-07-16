@@ -225,18 +225,16 @@ else{ <br>
 
    # example 8 
 
-<?php
-    require __DIR__ . './Header.php';
+>  > > <?php
+  -  require __DIR__ . './Header.php';<br>
 
 
-    echo "Main part of index.php";
+   - echo "Main part of index.php";<br>
 
     
-    require __DIR__ . './Footer.php';
+   - require __DIR__ . './Footer.php';<br>
 
-?>
-
-
+  ?>
 
 
 
@@ -244,11 +242,13 @@ else{ <br>
 
 
 
-<h1>FOOTER PAGE</h1>
-</main>
+
+
+-<h1>FOOTER PAGE</h1>
+-</main>
     
-</body>
-</html>
+-</body>
+-</html>
 
 
 
@@ -260,17 +260,17 @@ else{ <br>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-  <main>
-    <h1>HEADER File</h1>
+-<!DOCTYPE html>
+-<html lang="en">
+-<head>
+  -  <meta charset="UTF-8">
+  -  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   - <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   - <title>Document</title>
+-</head>
+-<body>
+ - <main>
+   - <h1>HEADER File</h1>
     
     
     
@@ -292,10 +292,10 @@ else{ <br>
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <title>Document</title>
+* <!DOCTYPE html>
+*<html lang="en">
+* <head>
+  *   <title>Document</title>
 </head>
 <body>
     <main>
