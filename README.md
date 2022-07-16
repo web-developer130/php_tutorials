@@ -61,9 +61,9 @@ XAMPP (Cross, Apache, MySQL, PHP, Perl) for Cross Platform: It includes some ot
 
 
 # 1.5
-Cross-Platform: Different local systems have different configurations of operating systems installed in it. The component of cross-platform has been included to increase the utility and audience for this package of Apache distributions. It supports various platforms such as packages of Windows, Linus, and MAC OS.<br>
-Apache: It is an HTTP a cross-platform web server. It is used worldwide for delivering web content. The server application has made free for installation and used for the community of developers under the aegis of Apache Software Foundation. The remote server of Apache delivers the requested files, images, and other documents to the user.<br>
-MariaDB: Originally, MySQL DBMS was a part of XAMPP, but now it has been replaced by MariaDB. It is one of the most widely used relational DBMS, developed by MySQL. It offers online services of data storage, manipulation, retrieval, arrangement, and deletion.<br>
+Cross-Platform:`#ffffff` Different local systems have different configurations of operating systems installed in it. The component of cross-platform has been included to increase the utility and audience for this package of Apache distributions. It supports various platforms such as packages of Windows, Linus, and MAC OS.<br>
+Apache: `#ffffff`It is an HTTP a cross-platform web server. It is used worldwide for delivering web content. The server application has made free for installation and used for the community of developers under the aegis of Apache Software Foundation. The remote server of Apache delivers the requested files, images, and other documents to the user.<br>
+MariaDB: `#ffffff` Originally, MySQL DBMS was a part of XAMPP, but now it has been replaced by MariaDB. It is one of the most widely used relational DBMS, developed by MySQL. It offers online services of data storage, manipulation, retrieval, arrangement, and deletion.<br>
 PHP: It is the backend scripting language primarily used for web development. PHP allows users to create dynamic websites and applications. It can be installed on every platform and supports a variety of database management systems. It was implemented using C language. PHP stands for Hypertext Processor. It is said to be derived from Personal Home Page tools, which explains its simplicity and functionality.<br>
 
 **---------------------**
@@ -170,7 +170,7 @@ else{ <br>
         
   # example 5
 
-<?php
+  /*<?php
     require __DIR__ . './Header.php';
 
     $request_mathod=strtoupper($_SERVER['REQUEST_METHOD']);
@@ -188,7 +188,7 @@ else{ <br>
 
     require __DIR__ . './Footer.php';
 
-?>
+?>*/
 
 
 
@@ -211,10 +211,10 @@ else{ <br>
 	  
 	  
 # example 7
-//<html>
-//<h1>FOOTER PAGE</h1>
-   //</main>
-  //  </body>
+<html>
+<h1>FOOTER PAGE</h1>
+   </main>
+   </body>
 </html>
 
 
